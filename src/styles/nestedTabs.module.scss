@@ -1,0 +1,16 @@
+// nested tab  main menu  css start
+
+.nested_tab_icon {
+  color: grey;
+  font-size: 20px;
+  &:hover {
+    color: black;
+  }
+  svg {
+    margin-right: 10px;
+  }
+}
+
+//   nested tab main menu tab end
+
+

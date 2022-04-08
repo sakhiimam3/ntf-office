@@ -1,0 +1,35 @@
+@import "./mixins.scss";
+.metamask_section {
+  margin-top: 140px;
+  
+
+
+  ul {
+    width: 100%;
+    li {
+        @include flexprop2;
+      width: 100%;
+
+      .list_img {
+       button{
+                outline: none;
+                border: none;
+                background: transparent;
+       }
+        img {
+          height: 40px;
+          cursor: pointer;
+        }
+        span{
+                 font-size: 16px;
+                 font-weight: 700;
+        }
+      }
+    }
+  }
+
+   h6{
+            font-size: 20px;
+            letter-spacing: 1px;
+   }
+}

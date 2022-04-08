@@ -1,0 +1,46 @@
+@import "./mixins.scss";
+@import "./partials.scss";
+// banner css
+
+* {
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+// tabs css start 
+.nav-tabs .nav-link {
+  border: none !important;
+  font-size: 18px;
+  font-weight: 500;
+  &:hover {
+    color: black;
+  }
+}
+
+.nav-tabs .nav-link.active {
+  border-bottom: 5px solid rgb(54, 83, 247) !important;
+}
+
+// tabs css :end
+
+// nested tab css 
+ul.nav.nav-tabs {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+// nested tab css end 
+
+  .navbar-collapse {
+    flex-basis: 100%;
+    flex-grow: 1;
+    align-items: center;
+    background-color: white;
+    display: inline-block;
+
+}

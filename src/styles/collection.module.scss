@@ -1,0 +1,54 @@
+@import "./partials.scss";
+@import "./mixins.scss";
+
+
+
+.collection {
+  margin-top: 70px;
+  width: 100%;
+  position: relative;
+}
+
+.banner_single {
+  width: 100%;
+  max-height: 280px;
+  box-sizing: border-box;
+}
+
+.banner_circle_img {
+  img {
+    position: absolute;
+    width: 120px;
+    top: 210px;
+    left: 45%;
+    border: 2px solid #86cde9;
+    border-radius: 50%;
+  }
+  img {
+    border-radius: 50%;
+    height: 117px;
+    right: 50%;
+  }
+}
+
+
+@media (max-width:992px){
+  .banner_single {
+      height: 300px;
+  }
+
+  .banner_circle_img {
+    img {
+      position: absolute;
+      width:70px;
+      top: 230px;
+      left: 40%;
+    }
+    img {
+      border-radius: 50%;
+      height: 70px;
+      right: 55%;
+    }
+  }
+
+}

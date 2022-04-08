@@ -1,0 +1,156 @@
+@import './mixins.scss';
+@import "./partials.scss";
+
+.profile_section {
+  display: flex;
+  justify-content: center;
+  h1 {
+    font-weight: 600;
+    font-size: 40px;
+    letter-spacing: 0px;
+    color: rgb(4, 17, 29);
+    padding: 5 0;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .created_by_owner {
+    font-size: 20px;
+    text-transform: capitalize;
+  }
+  a {
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+
+  Button {
+    height: 59px;
+    padding: 0 20px;
+    text-transform: capitalize;
+    border-radius: 25px;
+    background-color: $bg;
+    font-weight: 400;
+    color: black;
+    text-transform: capitalize;
+    outline: none;
+    margin-top: 20px !important;
+    border: 1px solid rgb(224, 215, 215);
+    &:hover {
+      background-color: $bg;
+      color: black;
+      border: 1px solid rgb(224, 215, 215);
+    }
+    i {
+      color: rgb(0, 79, 226);
+      font-size: 20px;
+    }
+  }
+}
+
+.watchlistbtn {
+    text-transform: capitalize;
+    color: grey;
+    background-color: $bg;
+    border: 0.5px solid rgb(247, 232, 232);
+    svg {
+      margin-right: 10px;
+    }
+  }
+  .indivisual_side_icon {
+    width: 49px;
+    background-color: $bg;
+    margin: 0 0px;
+    color: grey;
+    height: 50px;
+    svg {
+      font-size: 20px;
+    }
+    &:focus {
+      outline: none;
+    }
+}
+
+.small_card {
+  @include flexprop;
+  margin-top: 20px;
+  box-shadow: 1px 2px 6px 0px rgba(0, 0, 0, 0);
+  -webkit-box-shadow: 1px 2px 6px 0px rgba(0, 0, 0, 0);
+  -moz-box-shadow: 1px 2px 6px 0px rgba(0, 0, 0, 0);
+}
+.card_text {
+  border: 1px solid rgb(228, 221, 221);
+  width: 150px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  box-shadow: 1px 1px 0px 1px rgb(240, 231, 231);
+
+  &:hover {
+    box-shadow: 1px 1px 0px 0.5px rgb(167, 162, 162);
+    border: 0.5px solid rgb(218, 212, 212);
+    transform: translateY(-1px);
+  }
+
+  h6 {
+    font-weight: 600;
+  }
+}
+span {
+  color: black;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.readmore_text {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 20px !important;
+  color: rgb(97, 90, 90);
+}
+
+.readmoreButton {
+  width: 25% !important;
+  height: 30px !important;
+  background-color: $bg;
+  @include flexprop;
+  border: none;
+  color: black;
+
+  i {
+    color: black;
+  }
+  &:hover {
+    border: none !important;
+    background-color: rgb(216, 208, 208);
+  }
+}
+
+#more_text {
+  display: none;
+  p {
+    color: grey;
+  }
+}
+
+#readless {
+  display: none;
+  height: 25%;
+  width: 25%;
+}
+
+
+@media (max-width:500px){
+  .profile_section {
+    margin-top: 20px !important;
+    h1 {
+      font-size: 20px;
+     
+    }
+    .created_by_owner {
+      font-size: 16px;
+    
+    }
+  }
+}

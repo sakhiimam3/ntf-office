@@ -1,0 +1,97 @@
+@import "./partials.scss";
+.card {
+  display: inline-block;
+    border: 1px solid rgb(229, 232, 235);
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: all .5s linear;
+
+
+  &:hover {
+    box-shadow: 0.1px 1px 0.1px 0.1px rgb(167, 162, 162);
+    transform: translate(-2px,-5px)
+  }
+  
+.card_img {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom: 1px solid rgb(229, 232, 235);
+  background-color: rgb(229, 232, 235);
+  max-height: 230px;
+}
+
+.circle_img {
+  position: absolute;
+  top: 52%;
+  border: 2px solid $bg;
+  height: 51px;
+  left: 45%;
+  border-radius: 30px;
+
+  img {
+    height: 100% !important;
+    object-fit: contain;
+    transition: opacity 400ms ease 0s;
+    width: 100%;
+    border-radius: 30px;
+  }
+}
+
+.cardBody {
+      max-height: 220px;
+      overflow: hidden;
+      a{
+         text-decoration: none;
+      }
+}
+  
+}
+
+@media  (max-width:1200px){
+  .circle_img{
+       top: 45% !important;
+       left: 43% !important;
+  }
+}
+
+@media  (max-width:992px){
+  .circle_img{
+       top: 40% !important;
+       left: 43% !important;
+  }
+}
+
+@media  (max-width:800px){
+  .circle_img{
+       top: 30% !important;
+       left: 43% !important;
+  }
+}
+@media  (max-width:768px){
+  .circle_img{
+       top: 50% !important;
+       left: 43% !important;
+  }
+}
+
+@media  (max-width:500px){
+  .circle_img{
+    top: 50% !important;
+    left: 43% !important;
+
+  }
+}
+
+
+@media  (max-width:400px){
+  .circle_img{
+    top: 45% !important;
+    left: 43% !important;
+
+  }
+}
