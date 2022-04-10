@@ -9,88 +9,88 @@ import img from "../../Assets/Images/metamaskLogo.png";
 
 const CreateMetamask = () => {
 
- const Navigate=useNavigate()
-     
+  const Navigate = useNavigate()
+
 
   // states of connecWallet
-  const [error,setError] = useState(false);
-  const [created,setCreated]=useState(false)
-  
+  const [error, setError] = useState(false);
+  const [created, setCreated] = useState(false)
+
 
   //  function of connect wallet to metamask
   const connectWalletHandler = async () => {
     if (window.ethereum) {
       try {
-        const account =await window.ethereum.request({
+        const account = await window.ethereum.request({
           method: "eth_requestAccounts",
-           
+
         });
-         setCreated(true)
-       
+        setCreated(true)
+
       } catch (error) {
-           console.log("error")
-          
+        console.log("error")
+
       }
-    } 
-    else{
-          setError(true)
     }
- 
+    else {
+      setError(true)
+    }
+
   };
 
-//   navigate to create page 
-  if(created){
-       Navigate("/create")
+  //   navigate to create page 
+  if (created) {
+    Navigate("/create")
   }
 
 
   return (
     <>
-    
+
       <section className={Styles.metamask_section}>
-      
+
         <Container>
-        <Row  md={8}>
-              {error ? 
-            <div  class="alert alert-danger d-flex justify-content-center " role="alert">
-                      <h6 >Insall metamask extension !</h6> 
-                  </div>
-                  : null}
-            </Row>
+          <Row md={8}>
+            {error ?
+              <div class="alert alert-danger d-flex justify-content-center " role="alert">
+                <h6 >Insall metamask extension !</h6>
+              </div>
+              : null}
+          </Row>
           <Row className="mt-5 d-flex justify-content-center ">
-              <Col  md={7}>
-            <ul class="list-group">
-              <li class="list-group-item">
-                 
-                             
+            <Col md={7}>
+              <ul class="list-group">
+                <li class="list-group-item">
 
-            
-                     <div className={Styles.list_img}>
-                     <button onClick={connectWalletHandler}>
-                     <img   src={img} alt="img" /> <span>metamask</span>
-                     </button>
-                     </div>
-                      <div>
-                      <span class="badge bg-primary">popular</span>
-                      </div>
-                      
-                       
-                             
-                                   
-                                
-                               
-                                
 
-              
-                                  
-              </li>
-            </ul>
+
+
+                  <div className={Styles.list_img}>
+                    <button onClick={connectWalletHandler}>
+                      <img src={img} alt="img" /> <span>metamask</span>
+                    </button>
+                  </div>
+                  <div>
+                    <span class="badge bg-primary">popular</span>
+                  </div>
+
+
+
+
+
+
+
+
+
+
+                </li>
+              </ul>
             </Col>
           </Row>
-          
+
         </Container>
 
-      
+
       </section>
     </>
   );

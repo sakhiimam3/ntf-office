@@ -7,35 +7,51 @@ const CreateCollection = () => {
       icons: "fa-bars",
       heading: "Properties",
       para: "Textual traits that show up as rectangles",
-      add_icon:"fa-plus"
+      add_icon: "fa-plus",
+      type: 'button',
+      value: "+",
+      clases:"btn btn-outline-primary"
     },
     {
       id: 2,
       icons: "fa-star",
       heading: "Levels",
       para: "Numerical traits that show as a progress bar",
-      add_icon:"fa-plus"
+      add_icon: "fa-plus",
+      type: 'button',
+      value: "+",
+      clases:"btn btn-outline-primary"
     },
     {
       id: 3,
       icons: "fa-bar-chart",
       heading: "Stats",
       para: "Numerical traits that just show as numbersr",
-      add_icon:"fa-plus"
+      add_icon: "fa-plus",
+      type: 'button',
+      value: "+",
+      clases:"btn btn-outline-primary"
     },
     {
       id: 4,
       icons: "fa-unlock-alt  text-primary",
       heading: "Unlockable Content ",
       para: "Include unlockable content that can only be revealed by the owner of the item.",
-      add_icon:"fa-plus"
+      add_icon: "fa-plus",
+      type: 'checkbox',
+      inputid: "flexSwitchCheckDefault",
+      clases:'form-check-input'
+
     },
     {
-      id: 5 ,
+      id: 5,
       icons: "fa-exclamation-triangle",
       heading: "Unlockable Content",
       para: "Set this item as explicit and sensitive content",
-      add_icon:"fa-plus"
+      add_icon: "fa-plus",
+      type: 'checkbox',
+      inputid: "flexSwitchCheckDefault",
+      clases:'form-check-input'
     },
 
   ];
@@ -62,19 +78,28 @@ const CreateCollection = () => {
       </form>
 
       {/* select input list list  */}
-         {listItems.map((item,id)=>{
-             let {icons,heading,para,add_icon}=item
-             return   <SelectList   id={id}  icons={icons}  heading={heading} para={para} add_icon={add_icon} />
+      {listItems.map((item, id) => {
+        let { icons, heading, para, add_icon, type, inputid, value ,clases} = item
+        return <SelectList
+          id={id}
+          icons={icons}
+          heading={heading}
+          para={para}
+          add_icon={add_icon}
+          type={type}
+          inputid={inputid}
+          value={value}
+          clases={clases}
 
-                 
-             
-             
-         })}
+       />
 
-         
+
+      })}
+
+
     </section>
 
-        
+
   );
 };
 

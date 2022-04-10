@@ -1,12 +1,50 @@
-import React from "react";
+import React,{useRef,useState,useEffect} from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { MdCloudUpload } from "react-icons/md";
 import CreateForm from "../components/presentational/createForm";
 import Styles from "../styles/create.module.scss";
 const Create = () => {
+  const [image,setImage]=useState()
+  const [preview,setPreview]=useState('')
+
+  const fileUploadRef=useRef();
+  
+   useEffect(()=>{
+       if(image){
+           const reader = new FileReader()
+           reader.onload = readSuccess;                                            
+           function readSuccess() { 
+                 setPreview(reader.result)                                
+           };
+            reader.readAsDataURL(image)
+       }
+       else{
+           setPreview(null)
+       }
+   },[image])
+
+
+  const getFileHandler=(e)=>{
+        const file=e.target.files[0]
+        if(file && file.file.type.substr(0,5)){
+          setImage(file)
+        }
+        else{
+          setImage(null)
+        }
+        
+  }
+
+  
+
+  const uploadHandler=()=>{
+       fileUploadRef.current.click()
+  }
   return (
     <>
+       
       <section className={Styles.create_section}>
+
         <Container>
           <Row className="mt-5 pt-5 d-flex justify-content-center">
             <Col sm={10} md={9}>
@@ -31,11 +69,14 @@ const Create = () => {
                     WAV, OGG, GLB, GLTF. Max size: 100 MB
                   </span>
                 </div>
-
+               {/* uploade img div */}
                 <div class={Styles.Upload_img}>
-                  <div className={Styles.overlay}>
+                  <div className={Styles.overlay}  onClick={uploadHandler}>
                     {/* <img /> */}
-                    <MdCloudUpload />
+                   
+                      {preview ? <img src={preview} alt="upload" /> :   <MdCloudUpload />  }
+                 
+                      <input type="file"  ref={fileUploadRef}  onChange={getFileHandler}  accept="image/*"/>
                   </div>
                 </div>
               </div>

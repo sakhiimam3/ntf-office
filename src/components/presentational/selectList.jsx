@@ -2,7 +2,7 @@ import React from "react"
 // import { AiOutlineMenuFold } from "react-icons/ai";
 // import { GrFormAdd } from "react-icons/gr";
 import Styles from "../../styles/selecInput.module.scss"
-const SelectList = ({id,icons,heading,para,add_icon}) => {
+const SelectList = ({id,icons,heading,para,type,inputid,value,clases}) => {
   return (
     <React.Fragment key={id}> 
     
@@ -21,7 +21,8 @@ const SelectList = ({id,icons,heading,para,add_icon}) => {
                                   <p>{para}</p>
                            </div>
                              <div className={`col-md-1 d-flex justify-content-end ${Styles.select_list_btn}`}>
-                             <button type="button" class="btn btn-outline-primary"> <i className={ `fa ${add_icon}` } aria-hidden="true"></i></button>
+                                 <input type={type}  id={inputid} class={clases}  value={value}  />
+                             {/* <button type="button" class="btn btn-outline-primary"> <i className={ `fa ${add_icon}` } aria-hidden="true"></i></button> */}
                              </div>
                              </div>
                        </div>

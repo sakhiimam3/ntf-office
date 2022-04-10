@@ -28,7 +28,7 @@ const Home = () => {
                     </p>
                   </div>
                   <div className="btns mt-5">
-                    <button   type="button" class="btn btn-primary btn-lg">
+                    <button onClick={()=>Navigate("/explore")} type="button" class="btn btn-primary btn-lg">
                       Explore
                     </button>
                     &nbsp;

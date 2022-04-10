@@ -1,14 +1,46 @@
-import React from "react";
+import React,{useState} from "react";
 import Styles from "../../styles/createform.module.scss";
 import CreateCollection from "./createCollection";
 
 const CreateForm = () => {
+
+// input states ..................//
+const [input,setinput]=useState({
+     name:'',
+     external:'',
+     description:''
+})
+
+const [submit,setSubmit]=useState()
+
+  // input handler function ............//
+
+  const handleInputChange = (e) => {
+    //const name = e.target.name 
+    //const value = e.target.value 
+    const { name, value } = e.target;
+    
+
+    setinput({
+      ...input,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit=()=>{
+        setSubmit(input)
+
+  }
+
+    
+
+
   return (
     <>
       <form className={Styles.form}>
         <div className="mt-5">
           <label className="mb-3">
-            name <span className="text-danger">* </span>
+            name <span className="text-danger">*</span>
           </label>{" "}
           <br />
           <input
@@ -16,6 +48,8 @@ const CreateForm = () => {
             type="text"
             placeholder="Name"
             name="name"
+            value={input.name}
+            onChange={handleInputChange}
           />
         </div>
 
@@ -27,10 +61,12 @@ const CreateForm = () => {
             link to your own webpage with more details.
           </p>
           <input
+            name="external"
             style={{ width: "100%" }}
             type="text"
             placeholder="https://yoursite.io/item/123"
-            name="name"
+            value={input.external}
+            onChange={handleInputChange}
           />
         </div>
 
@@ -44,8 +80,10 @@ const CreateForm = () => {
             className={Styles.text_area}
             type="text"
             placeholder="Provide a detailed description of your item"
-            name="name"
+            name="description"
             row="4"
+            value={input.description}
+            onChange={handleInputChange}
           />
         </div>
       </form>
@@ -111,7 +149,7 @@ const CreateForm = () => {
          <hr />
            
               <div className="mt-5">
-                  <button disabled className="btn btn-primary text-capitalize  btn-lg " >create</button>
+                  <button  onClick={handleSubmit} className="btn btn-primary text-capitalize  btn-lg " >create</button>
               </div>
       </div>
     </>
