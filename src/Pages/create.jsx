@@ -12,10 +12,9 @@ const Create = () => {
    useEffect(()=>{
        if(image){
            const reader = new FileReader()
-           reader.onload = readSuccess;                                            
-           function readSuccess() { 
-                 setPreview(reader.result)                                
-           };
+           reader.onloadend = ()=>{
+               setPreview(reader.result)
+           }
             reader.readAsDataURL(image)
        }
        else{
@@ -26,7 +25,7 @@ const Create = () => {
 
   const getFileHandler=(e)=>{
         const file=e.target.files[0]
-        if(file && file.file.type.substr(0,5)){
+        if(file && file.type.substr(0,5)){
           setImage(file)
         }
         else{
@@ -74,7 +73,7 @@ const Create = () => {
                   <div className={Styles.overlay}  onClick={uploadHandler}>
                     {/* <img /> */}
                    
-                      {preview ? <img src={preview} alt="upload" /> :   <MdCloudUpload />  }
+                      {preview ? <img   src={preview} alt="upload"  onClick={()=>setImage(null)}/> :   <MdCloudUpload />  }
                  
                       <input type="file"  ref={fileUploadRef}  onChange={getFileHandler}  accept="image/*"/>
                   </div>
