@@ -1,8 +1,14 @@
 import React,{useState} from "react";
+import Select from 'react-select';
+
 import Styles from "../../styles/createform.module.scss";
 import CreateCollection from "./createCollection";
 
 const CreateForm = () => {
+
+  // blockChain select states
+  const [selectedOption, setSelectedOption] = useState(null);
+
 
 // input states ..................//
 const [input,setinput]=useState({
@@ -12,6 +18,24 @@ const [input,setinput]=useState({
 })
 
 const [submit,setSubmit]=useState()
+  
+ //  select input options 
+ const options = [
+  { value: 'chocolate', label: 'Chocolate' },
+  { value: 'strawberry', label: 'Strawberry' },
+  { value: 'vanilla', label: 'Vanilla' },
+];
+
+
+  // custom selct styling 
+  const customStyles = {
+    control: base => ({
+      ...base,
+      height: 50,
+      minHeight: 35,
+    
+    })
+  };
 
   // input handler function ............//
 
@@ -90,6 +114,7 @@ const [submit,setSubmit]=useState()
 
       {/* create collection list  */}
       <CreateCollection />
+      
 
       {/* supply   items*/}
       <div className="supply">
@@ -110,24 +135,14 @@ const [submit,setSubmit]=useState()
         {/* supply   items end*/}
 
         {/* block chain  select field */}
-        <section>
-          <form className={Styles.form}>
-            <div className="mt-5">
-              <label className="mb-2">blockchain</label>{" "}
-              <div class="input-group  pb-3 mt-2">
-                <select
-                  class={` form-select form-select-lg  ${Styles.select_input}  position-relative`}
-                  aria-label=".form-select-lg example"
-                  autoFocus="none"
-                >
-                  <option selected> Blockchain</option>
-                  <option value="1">one </option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
-              </div>
-            </div>
-          </form>
+        <section  className="mt-5">
+        <Select
+        defaultValue={selectedOption}
+        onChange={setSelectedOption}
+        options={options}
+        placeholder="select block chain"
+        styles={customStyles}
+      />
         </section>
 
         {/* freez meta data section  */}

@@ -20,12 +20,18 @@
       }
     }
 
-    .select_input{
-      height: 50px;
-        .form-control{
-         :focus{
-          outline: 0px none #fff !important
-         }
-        }
-    }
+
+   
+   
+}
+
+.render_model_input{
+     width: 100px;
+     height: auto;
+     background-color: grey;
+     margin-top: 20px;
+     text-align: center;
+     span{
+      color: rgb(248, 239, 239);
+     }
 }
