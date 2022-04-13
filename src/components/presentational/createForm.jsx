@@ -1,6 +1,8 @@
 import React,{useState} from "react";
 import Select from 'react-select';
 
+import ethimg from "../../Assets/Images/ethereium.png"
+import polyImage  from "../../Assets/Images/polygon.png"
 import Styles from "../../styles/createform.module.scss";
 import CreateCollection from "./createCollection";
 
@@ -8,7 +10,11 @@ const CreateForm = () => {
 
   // blockChain select states
   const [selectedOption, setSelectedOption] = useState(null);
+ 
+  // createbtn states
+  const [disable, setDisable] =useState(true);
 
+  
 
 // input states ..................//
 const [input,setinput]=useState({
@@ -21,10 +27,11 @@ const [submit,setSubmit]=useState()
   
  //  select input options 
  const options = [
-  { value: 'chocolate', label: 'Chocolate' },
-  { value: 'strawberry', label: 'Strawberry' },
-  { value: 'vanilla', label: 'Vanilla' },
+  { value: "polygon", label: `polygon` ,icon:<img src={polyImage}  /> },
+  { value: "Ethereium", label: `Ethereium` ,icon:<img src={ethimg}  /> },
+
 ];
+ 
 
 
   // custom selct styling 
@@ -33,6 +40,7 @@ const [submit,setSubmit]=useState()
       ...base,
       height: 50,
       minHeight: 35,
+      background:"white"
     
     })
   };
@@ -50,9 +58,9 @@ const [submit,setSubmit]=useState()
       [name]: value,
     });
   };
-
+ 
   const handleSubmit=()=>{
-        setSubmit(input)
+     
 
   }
 
@@ -74,6 +82,7 @@ const [submit,setSubmit]=useState()
             name="name"
             value={input.name}
             onChange={handleInputChange}
+            required
           />
         </div>
 
@@ -90,6 +99,7 @@ const [submit,setSubmit]=useState()
             type="text"
             placeholder="https://yoursite.io/item/123"
             value={input.external}
+            required
             onChange={handleInputChange}
           />
         </div>
@@ -137,11 +147,16 @@ const [submit,setSubmit]=useState()
         {/* block chain  select field */}
         <section  className="mt-5">
         <Select
-        defaultValue={selectedOption}
         onChange={setSelectedOption}
         options={options}
         placeholder="select block chain"
         styles={customStyles}
+        getOptionLabel={e => (
+          <div style={{ display: 'flex', alignItems: 'center', }} className={Styles.select_options}>
+            {e.icon}
+            <span style={{ marginLeft: 5 }}>{e.value}</span>
+          </div>
+        )}
       />
         </section>
 
@@ -164,7 +179,7 @@ const [submit,setSubmit]=useState()
          <hr />
            
               <div className="mt-5">
-                  <button  onClick={handleSubmit} className="btn btn-primary text-capitalize  btn-lg " >create</button>
+                  <button disabled={disable}  onClick={handleSubmit} className="btn btn-primary text-capitalize  btn-lg " >create</button>
               </div>
       </div>
     </>

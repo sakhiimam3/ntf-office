@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { Modal } from "react-bootstrap";
 import Styles from "../../styles/modal.module.scss";
+
+
+
 function MyVerticallyCenteredModal(props) {
   //   dynamic input state
-  const [inputList, setInputList] = useState([{ character: "", male: "" }]);
+  const [inputList, setInputList] = useState([{ character: "", chrName: "" }]);
 
   //   modal form add or remove functions
   // handle input change
@@ -25,13 +28,13 @@ function MyVerticallyCenteredModal(props) {
 
   // handle click event of the Add button
   const handleAddClick = () => {
-    setInputList([...inputList, { character: "", male: "" }]);
+    setInputList([...inputList, { character: "", chrName: "" }]);
   };
 
   //   handle click event of the save button
   const handleSave = () => {
     props.setModelInput(inputList);
-    setInputList([...inputList, { character: "", male: "" }]);
+    setInputList([...inputList, { character: "", chrName: "" }]);
     props.onHide();
   };
 
@@ -80,12 +83,15 @@ function MyVerticallyCenteredModal(props) {
                   value={x.character}
                   onChange={(e) => handleInputChange(e, i)}
                 />
-                &nbsp;{" "}
+
+                 
+                &nbsp;
+                
                 <input
                   className="ml10"
-                  name="male"
-                  placeholder="Male"
-                  value={x.male}
+                  name="chrName"
+                  placeholder="male"
+                  value={x.chrName}
                   onChange={(e) => handleInputChange(e, i)}
                 />
                 <div className="d-flex justify-content-center">
