@@ -4,7 +4,7 @@ import { FaTh } from "react-icons/fa";
 import { FiActivity } from "react-icons/fi";
 import Styles from "../../styles/nestedTabs.module.scss";
 import RenderInnerList from "../stateful/singleCardList";
-import Sidebar from "./sidebar";
+// import Sidebar from "./sidebar";
 
 const SingleCradTabs = () => {
   return (

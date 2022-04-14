@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, Placeholder } from "react-bootstrap";
-import "../../styles/general.scss";
 import Styles from "../../styles/loader.module.scss";
 const Loader = () => {
   return (

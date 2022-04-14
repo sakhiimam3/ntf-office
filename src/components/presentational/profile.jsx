@@ -55,7 +55,7 @@ const Profile = () => {
               <AiFillWallet />
             </Button>
             <Button className={Styles.indivisual_side_icon} variant="light">
-              <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+              <i className="fa fa-ellipsis-v" aria-hidden="true"></i>
             </Button>
           </Col>
         </Row>
@@ -70,7 +70,7 @@ const Profile = () => {
             </span>
             <br />
             <Button>
-              <i class="fa fa-twitter" aria-hidden="true"></i> CyberSnailsNFT{" "}
+              <i className="fa fa-twitter" aria-hidden="true"></i> CyberSnailsNFT{" "}
               <a href="#">Linked</a>
             </Button>
             <div className={Styles.small_card}>

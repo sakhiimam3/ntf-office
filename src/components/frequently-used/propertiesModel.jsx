@@ -3,13 +3,11 @@ import { Button } from "react-bootstrap";
 import { Modal } from "react-bootstrap";
 import Styles from "../../styles/modal.module.scss";
 
-
-
 function MyVerticallyCenteredModal(props) {
   //   dynamic input state
   const [inputList, setInputList] = useState([{ character: "", chrName: "" }]);
 
-  //   modal form add or remove functions
+  // modal form add or remove functions
   // handle input change
   const handleInputChange = (e, index) => {
     const { name, value } = e.target;
@@ -45,7 +43,6 @@ function MyVerticallyCenteredModal(props) {
       aria-labelledby="contained-modal-title-vcenter"
       centered
       scrollable="true"
-     
     >
       <Modal.Header closeButton>
         <Modal.Title
@@ -66,8 +63,8 @@ function MyVerticallyCenteredModal(props) {
         <form className={Styles.form}>
           {inputList.map((x, i) => {
             return (
-              <div>
-                <div className="d-inline">
+              <div key={i}>
+                <div className="d-flex">
                   {inputList.length !== 1 && (
                     <button
                       className={Styles.removebtn}
@@ -83,10 +80,7 @@ function MyVerticallyCenteredModal(props) {
                   value={x.character}
                   onChange={(e) => handleInputChange(e, i)}
                 />
-
-                 
                 &nbsp;
-                
                 <input
                   className="ml10"
                   name="chrName"

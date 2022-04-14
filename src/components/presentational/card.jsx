@@ -6,7 +6,7 @@ import circle from "../../Assets/Images/circle2.jpg"
 const Cards = (props) => {
     const navigate=useNavigate()
   return (
-    <>
+    <React.Fragment key={props.id}>
       
    <Card className={Styles.card}  onClick={()=>navigate(`/${props.id}`)}> 
      <Card.Img variant="top" className={Styles.card_img} src={props.imgsrc} />
@@ -31,7 +31,7 @@ const Cards = (props) => {
       
      </Card.Body>
    </Card> 
-    </>
+    </React.Fragment>
   )
 
 

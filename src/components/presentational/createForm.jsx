@@ -1,71 +1,130 @@
-import React,{useState} from "react";
-import Select from 'react-select';
+import React, { useState, useEffect } from "react";
+import Select from "react-select";
 
-import ethimg from "../../Assets/Images/ethereium.png"
-import polyImage  from "../../Assets/Images/polygon.png"
+import metmakImg from "../../Assets/Images/metamaskLogo.png";
+import polyImage from "../../Assets/Images/polygon.png";
+
 import Styles from "../../styles/createform.module.scss";
 import CreateCollection from "./createCollection";
+import SelectList from "./selectList";
 
-const CreateForm = () => {
-
+const CreateForm = (props) => {
   // blockChain select states
   const [selectedOption, setSelectedOption] = useState(null);
- 
-  // createbtn states
-  const [disable, setDisable] =useState(true);
 
-  
+  //  supply stats
+  const [supply, setSupply] =useState(1);
 
-// input states ..................//
-const [input,setinput]=useState({
-     name:'',
-     external:'',
-     description:''
-})
+  // input states ..................//
+  const [input, setinput] = useState({
+    name: "",
+    external: "",
+    description: "",
+  });
 
-const [submit,setSubmit]=useState()
-  
- //  select input options 
- const options = [
-  { value: "polygon", label: `polygon` ,icon:<img src={polyImage}  /> },
-  { value: "Ethereium", label: `Ethereium` ,icon:<img src={ethimg}  /> },
+  const [disable, setDisable] = useState(true);
 
-];
- 
+  // get all input from child states
+  const [propInput, setPropInput] = useState(null);
+  const [levelInput, setleveInput] = useState(null);
+  const [statsInput, setstatsInput] = useState(null);
+  const [sensitive, setSensitive] = useState(null);
+  const [collection, setCreatecollection] = useState(null);
+
+  // clear model render dic states 
+  const [clearproper,setClearproper]=useState()
+  const [clearlevel,setClearLevel]=useState()
+  const [clearsats,setClearsats]=useState()
 
 
-  // custom selct styling 
+
+
+  // handle supply inut handler
+  const handleSupply = (e) => {
+    setSupply(e.target.value);
+  };
+
+  //  select input options
+  const options = [
+    { value: "metamask", label: `metamask`, icon: <img src={metmakImg} /> },
+    { value: "polygon", label: `polygon`, icon: <img src={polyImage} /> },
+  ];
+
+  // custom selct styling
   const customStyles = {
-    control: base => ({
+    control: (base) => ({
       ...base,
       height: 50,
       minHeight: 35,
-      background:"white"
-    
-    })
+      background: "white",
+    }),
   };
 
   // input handler function ............//
 
   const handleInputChange = (e) => {
-    //const name = e.target.name 
-    //const value = e.target.value 
+    //const name = e.target.name
+    //const value = e.target.value
     const { name, value } = e.target;
-    
 
     setinput({
       ...input,
       [name]: value,
     });
   };
- 
-  const handleSubmit=()=>{
-     
 
-  }
+  useEffect(() => {
+    if (
+      input.name &&
+      input.external &&
+      input.description &&
+      collection &&
+      supply > 1 &&
+      selectedOption &&
+      propInput &&
+      levelInput &&
+      statsInput &&
+      sensitive
+    ) {
+      setDisable(false);
+    }
+  });
+  // get all input values from children component in two below functions
 
+  const childInputValues = (propInp, levelInp, SatsInp, sensit) => {
+    setPropInput(propInp);
+    setleveInput(levelInp);
+    setstatsInput(SatsInp);
+    setSensitive(sensit);
+  
     
 
+  };
+
+  // get collection input values from child com 
+  const getCreateCollection = (collection) => {
+    setCreatecollection(collection);
+  };
+
+
+
+
+  // final submit function
+  const handleSubmit = () => {
+    setinput({ name: "", external: "", description: "" });
+    setSupply(1);
+    setSelectedOption(null)
+   
+    props.setImage(null)
+    console.log(input, "name,external,description");
+    console.log(collection, "collection");
+    console.log(propInput, "properties model ");
+    console.log(levelInput, "level model ");
+    console.log(statsInput, "stats model ");
+    console.log(sensitive, "senstive input value");
+    console.log(supply, "supply input value");
+    console.log(selectedOption, "selec collection value");
+  };
 
   return (
     <>
@@ -78,7 +137,7 @@ const [submit,setSubmit]=useState()
           <input
             style={{ width: "100%" }}
             type="text"
-            placeholder="Name"
+            placeholder="Item name"
             name="name"
             value={input.name}
             onChange={handleInputChange}
@@ -99,8 +158,8 @@ const [submit,setSubmit]=useState()
             type="text"
             placeholder="https://yoursite.io/item/123"
             value={input.external}
-            required
             onChange={handleInputChange}
+            required
           />
         </div>
 
@@ -123,8 +182,10 @@ const [submit,setSubmit]=useState()
       </form>
 
       {/* create collection list  */}
-      <CreateCollection />
-      
+      <CreateCollection getCreateCollection={getCreateCollection} />
+
+      {/* select list like properties stats levels etc  */}
+      <SelectList childInputValues={childInputValues} />
 
       {/* supply   items*/}
       <div className="supply">
@@ -133,11 +194,11 @@ const [submit,setSubmit]=useState()
             <label className="mb-3">supply</label> <br />
             <input
               style={{ width: "100%" }}
-              type="text"
-              placeholder="Name"
+              type="number"
               name="name"
-              value={1}
-              disabled
+              value={supply}
+              onChange={handleSupply}
+              required
             />
           </div>
         </form>
@@ -145,42 +206,54 @@ const [submit,setSubmit]=useState()
         {/* supply   items end*/}
 
         {/* block chain  select field */}
-        <section  className="mt-5">
-        <Select
-        onChange={setSelectedOption}
-        options={options}
-        placeholder="select block chain"
-        styles={customStyles}
-        getOptionLabel={e => (
-          <div style={{ display: 'flex', alignItems: 'center', }} className={Styles.select_options}>
-            {e.icon}
-            <span style={{ marginLeft: 5 }}>{e.value}</span>
-          </div>
-        )}
-      />
+        <section className="mt-5">
+          <Select
+            defaultInputValue={selectedOption}
+            onChange={setSelectedOption}
+            options={options}
+            placeholder="select block chain"
+            styles={customStyles}
+            getOptionLabel={(e) => (
+              <div
+                style={{ display: "flex", alignItems: "center" }}
+                className={Styles.select_options}
+              >
+                {e.icon}
+                <span style={{ marginLeft: 5 }}>{e.value}</span>
+              </div>
+            )}
+          />
         </section>
 
         {/* freez meta data section  */}
         <section>
           <div className="mt-4">
-            <div className={ ` mt-2 ${Styles.free_data_text_box}`}>
+            <div className={` mt-2 ${Styles.free_data_text_box}`}>
               <h4>Freeze metadata</h4>
               <p>
                 Freezing your metadata will allow you to permanently lock and
                 store all of this item's content in decentralized file storage.
               </p>
 
-                   <div className={Styles.freez_note}>
-                       <h6>To freeze your metadata, you must create your item first.</h6>
-                   </div>
+              <div className={Styles.freez_note}>
+                <h6>
+                  To freeze your metadata, you must create your item first.
+                </h6>
+              </div>
             </div>
           </div>
         </section>
-         <hr />
-           
-              <div className="mt-5">
-                  <button disabled={disable}  onClick={handleSubmit} className="btn btn-primary text-capitalize  btn-lg " >create</button>
-              </div>
+        <hr />
+
+        <div className="mt-5">
+          <button
+            onClick={handleSubmit}
+            className="btn btn-primary text-capitalize  btn-lg "
+            disabled={disable}
+          >
+            create
+          </button>
+        </div>
       </div>
     </>
   );

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import Select from "react-select";
-import SelectList from "./selectList";
 import Styles from "../../styles/createcollection.module.scss";
 
-const CreateCollection = () => {
+const CreateCollection = (props) => {
 
 
   //  selectOption state
@@ -11,10 +10,13 @@ const CreateCollection = () => {
 
   //  select input options
   const options = [
-    { value: "chocolate", label: "Chocolate" },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" },
+    { value: "species", label: "species" },
+    { value: "cartoon", label: "cartoon" },
+    { value: "animals", label: "animals" },
   ];
+
+  // send data to create form 
+ props.getCreateCollection(selectedOption)
 
   return (
     <section>
@@ -22,14 +24,7 @@ const CreateCollection = () => {
         <div className="mt-3">
           <label className="mb-2">collections</label>{" "}
           <p>
-            This is the collection where your item will appear. &nbsp;{" "}
-            <i
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              title="Tooltip on top"
-              class="fa fa-info-circle fs-5"
-              aria-hidden="true"
-            ></i>
+            This is the collection where your item will appear.
           </p>
           <Select
             defaultValue={selectedOption}
@@ -40,13 +35,6 @@ const CreateCollection = () => {
           />
         </div>
       </form>
-
-      {/* select input list list  */}
-
-      {/* properties list  */}
-      <SelectList />
-
-      {/* render selected input list  */}
 
 
     </section>

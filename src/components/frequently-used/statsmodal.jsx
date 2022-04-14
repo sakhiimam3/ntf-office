@@ -65,7 +65,7 @@ function StatsModel(props) {
         <form className={Styles.form}>
           {inputList.map((x, i) => {
             return (
-              <div>
+              <div key={i}>
                 <div className="d-inline">
                   {inputList.length !== 1 && (
                     <button

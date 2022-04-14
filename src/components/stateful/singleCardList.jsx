@@ -23,31 +23,25 @@ const SingleCardList = () => {
 
   useEffect(() => {
     getData();
-    
-
   }, []);
 
   const SingleCard = () => {
     return (
-      <>   
-
-        
-        <Container >
-        
-      
+      <>
+        <Container>
           <Row>
-        
-            {data.map((item, index) => {
+            {data.map((item,index) => {
+            
               return (
                 <>
                   <Col className="mt-5" md={3}>
                     <NestedCard
                       imgsrc={img}
-                      key={index}
                       title={item.title.slice(0, 10)}
                       body={item.body[5]}
                       id={item.id}
-                    />
+                      num={index}
+                          />
                   </Col>
                 </>
               );
@@ -59,13 +53,9 @@ const SingleCardList = () => {
   };
 
   return (
-    <> 
-     
-           <SingleCardHeader  length={data.length} />
-           {SingleCard()}
-        
-     
-     
+    <>
+      <SingleCardHeader length={data.length} />
+      {SingleCard()}
     </>
   );
 };

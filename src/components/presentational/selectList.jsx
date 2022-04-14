@@ -1,38 +1,44 @@
 import React, { useState } from "react";
-import { useRef } from "react";
 import { ProgressBar } from "react-bootstrap";
 import Styles from "../../styles/selecInput.module.scss";
 import LevelsModel from "../frequently-used/levelsmodal";
 import MyVerticallyCenteredModal from "../frequently-used/propertiesModel";
 import StatsModel from "../frequently-used/statsmodal";
 
-
-const SelectList = () => {
-  const checkboxref=useRef("null")
+const SelectList = (props) => {
   // modal state
   const [properModel, setPropModel] = useState(false);
   const [levelModel, setLevelModal] = useState(false);
-  const [statsModel,setSatesModal]  = useState(false)
+  const [statsModel, setSatesModal] = useState(false);
 
   //  states of get input data from models inputs
   const [modelInput, setModelInput] = useState([]);
   const [levelinput, setlevelInput] = useState([]);
-  const [statsinput,setSatsInput]   =useState([])
+  const [statsinput, setSatsInput] = useState([]);
 
-  //  check box states 
-  const [checked,setChecked]=useState(false)
+  //  check box states
+  const [checked, setChecked] = useState(false);
 
+  // sensitive input state
+  const [sesitiveInput, setSenitiveInput] = useState("");
 
-// handle check box input 
-const handleClick = () => setChecked(!checked)
+  // handle check box input
+  const handleClick = () => setChecked(!checked);
 
+  // handle sensitive input event handler
+  const handelSensitive = (e) => {
+    setSenitiveInput(e.target.value);
+  };
+
+  // send input values to create form parent component
+  props.childInputValues(modelInput, levelinput, statsinput, sesitiveInput,setModelInput,setlevelInput,setSatsInput);
 
   return (
     <React.Fragment>
       {/* properties list  */}
       <div className={Styles.SelectList}>
-        <ul class="list-group list-group-flush ">
-          <li class="list-group-item  pt-3 ">
+        <ul className="list-group list-group-flush ">
+          <li className="list-group-item  pt-3 ">
             <div className={Styles.list_content}>
               <div className="container-fluid">
                 <div className="row">
@@ -62,7 +68,7 @@ const handleClick = () => setChecked(!checked)
           </li>
         </ul>
       </div>
-      {/* render properties input values  */}
+      {/* render properties input values below  */}
       <section>
         <div className="container">
           <div className="row">
@@ -71,7 +77,10 @@ const handleClick = () => setChecked(!checked)
                 <>
                   <div className="col-md-2 mb-4">
                     <div className={Styles.render_model_input}>
-                      <span className={Styles.Progress_link}>{item.character}</span> <br />
+                      <span className={Styles.Progress_link}>
+                        {item.character}
+                      </span>{" "}
+                      <br />
                       <span>{item.chrName}</span>
                     </div>
                   </div>
@@ -83,8 +92,8 @@ const handleClick = () => setChecked(!checked)
       </section>
       {/* level list  */}
       <div className={Styles.SelectList}>
-        <ul class="list-group list-group-flush ">
-          <li class="list-group-item  pt-3 ">
+        <ul className="list-group list-group-flush ">
+          <li className="list-group-item  pt-3 ">
             <div className={Styles.list_content}>
               <div className="container-fluid">
                 <div className="row">
@@ -114,16 +123,14 @@ const handleClick = () => setChecked(!checked)
           </li>
         </ul>
       </div>
-      {/* render level input values  */}
-      
+      {/* render level input values  below */}
+
       <section>
         <div className="container">
           <div className="row">
             {levelinput.map((item) => {
               return (
                 <>
-        
-
                   <div className="col-md-7">
                     <div className={Styles.render_model_input}>
                       <div className="d-flex justify-content-between">
@@ -136,7 +143,6 @@ const handleClick = () => setChecked(!checked)
                      <div class="progress-bar" role="progressbar" style={{width:`${Math.floor((item.speed / 100 )* 100)}`,color:'white'}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{Math.floor((item.speed / 100 ) * 100)}%</div>
                        </div> */}
                       <ProgressBar
-                          
                         now={(item.speed / 1000) * 100}
                         label={`${(item.speed / 1000) * 100}%`}
                       />
@@ -151,8 +157,8 @@ const handleClick = () => setChecked(!checked)
 
       {/* stats list  */}
       <div className={Styles.SelectList}>
-        <ul class="list-group list-group-flush ">
-          <li class="list-group-item  pt-3 ">
+        <ul className="list-group list-group-flush ">
+          <li className="list-group-item  pt-3 ">
             <div className={Styles.list_content}>
               <div className="container-fluid">
                 <div className="row">
@@ -170,7 +176,7 @@ const handleClick = () => setChecked(!checked)
                     className={`col-md-1 d-flex justify-content-end ${Styles.select_list_btn} `}
                   >
                     <input
-                      onClick={()=>setSatesModal(true)}
+                      onClick={() => setSatesModal(true)}
                       type="button"
                       value="+"
                       className="btn btn-outline-primary"
@@ -183,16 +189,14 @@ const handleClick = () => setChecked(!checked)
         </ul>
       </div>
 
- {/* render level input values  */}
-      
- <section>
+      {/* render level input values  */}
+
+      <section>
         <div className="container">
           <div className="row">
             {statsinput.map((item) => {
               return (
                 <>
-                 
-
                   <div className="col-md-7">
                     <div className={Styles.render_model_input}>
                       <div className="d-flex justify-content-between">
@@ -210,12 +214,10 @@ const handleClick = () => setChecked(!checked)
         </div>
       </section>
 
-
-
       {/*unloackable list */}
       <div className={Styles.SelectList}>
-        <ul class="list-group list-group-flush ">
-          <li class="list-group-item  pt-3 ">
+        <ul className="list-group list-group-flush ">
+          <li className="list-group-item  pt-3 ">
             <div className={Styles.list_content}>
               <div className="container-fluid">
                 <div className="row">
@@ -238,42 +240,43 @@ const handleClick = () => setChecked(!checked)
                   <div
                     className={`col-md-1 d-flex justify-content-end ${Styles.select_list_btn} `}
                   >
-                    <div class="form-check form-switch">
+                    <div className="form-check form-switch">
                       <input
                         style={{
                           width: "60px",
                           height: "20px",
                           backgroundColor: "grey",
                         }}
-                        class="form-check-input"
+                        className="form-check-input"
                         type="checkbox"
                         id="flexSwitchCheckDefault"
-                          ref={checkboxref}
-                          onClick={handleClick}
-                           checked={checked}
+                        onClick={handleClick}
+                        defaultChecked={checked}
                       />
-                      
-                    
-
-
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </li>
-          {checked ? 
-                          <div className="render_textarea mt-3">
-                              <textarea name="" id="" cols="5" rows="5"  className={Styles.check_btn_textArea}  placeholder="Enter content (access key, code to redeem, link to a file, etc.)" />
-                          </div> 
-                          : null
-                     }
+          {checked ? (
+            <div className="render_textarea mt-3">
+              <textarea
+                cols="5"
+                rows="5"
+                value={sesitiveInput}
+                onChange={handelSensitive}
+                className={Styles.check_btn_textArea}
+                placeholder="Enter content (access key, code to redeem, link to a file, etc.)"
+              />
+            </div>
+          ) : null}
         </ul>
       </div>
       {/* sensitive content  list   */}
       <div className={Styles.SelectList}>
-        <ul class="list-group list-group-flush ">
-          <li class="list-group-item  pt-3 ">
+        <ul className="list-group list-group-flush ">
+          <li className="list-group-item  pt-3 ">
             <div className={Styles.list_content}>
               <div className="container-fluid">
                 <div className="row">
@@ -296,14 +299,14 @@ const handleClick = () => setChecked(!checked)
                   <div
                     className={`col-md-1 d-flex justify-content-end ${Styles.select_list_btn} `}
                   >
-                    <div class="form-check form-switch">
+                    <div className="form-check form-switch">
                       <input
                         style={{
                           width: "60px",
                           height: "20px",
                           backgroundColor: "grey",
                         }}
-                        class="form-check-input"
+                        className="form-check-input"
                         type="checkbox"
                         id="flexSwitchCheckDefault"
                       />

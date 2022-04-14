@@ -6,17 +6,13 @@ import { BsFillGrid3X3GapFill, BsFillGridFill } from "react-icons/bs";
 
 const SingleCardHeader = (props) => {
 
-  
-  
-
-
   return (
     <>
       <Container>
         <Row className="mt-2">
           <Col md={6}>
             <div className={Styles.search_input}>
-              <i class="fa fa-search search_icon" aria-hidden="true"></i>
+              <i className="fa fa-search search_icon" aria-hidden="true"></i>
               <input    type="text" placeholder="Search" />
             </div>
           </Col>

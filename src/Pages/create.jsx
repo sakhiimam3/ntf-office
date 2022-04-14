@@ -34,7 +34,7 @@ const Create = () => {
         
   }
 
-  
+
 
   const uploadHandler=()=>{
        fileUploadRef.current.click()
@@ -64,12 +64,11 @@ const Create = () => {
                 </div>
                 <div className={Styles.file_size_text}>
                   <span>
-                    File types supported : JPG, PNG, GIF, SVG, MP4, WEBM, MP3,
-                    WAV, OGG, GLB, GLTF. Max size: 100 MB
+                    File types supported : JPG, PNG, GIF, SVG, . Max size: 100 MB
                   </span>
                 </div>
                {/* uploade img div */}
-                <div class={Styles.Upload_img}>
+                <div className={Styles.Upload_img}>
                   <div className={Styles.overlay}  onClick={uploadHandler}>
                     {/* <img /> */}
                    
@@ -81,7 +80,7 @@ const Create = () => {
               </div>
 
               {/* form section component */}
-                <CreateForm />
+                <CreateForm  setImage={setImage}/>
                {/* form section   component */}
               
             

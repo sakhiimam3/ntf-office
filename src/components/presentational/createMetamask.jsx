@@ -21,7 +21,7 @@ const CreateMetamask = () => {
   const connectWalletHandler = async () => {
     if (window.ethereum) {
       try {
-        const account = await window.ethereum.request({
+         await window.ethereum.request({
           method: "eth_requestAccounts",
 
         });

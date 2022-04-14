@@ -4,12 +4,14 @@ import Styles from "../../styles/nestedCard.module.scss"
 
 
 const Singlecard = (props) => {
+  
   return (
-    <Card className={Styles.nestedCard}>
+    <React.Fragment key={props.num}>
+    <Card className={Styles.nestedCard}  >
     <Card.Img  className={Styles.nested_card_img}  id="nested-card-img" variant="top" src={props.imgsrc} />
     <Card.Body  className={Styles.nested_card_body}>
      
-      <Card.Text  className={Styles.cardbodyDiv}>
+      <Card.Text  as='div' className={Styles.cardbodyDiv}>
             <div>
                  <span >ape drops:snoo</span> <br />
                   <span className="name">foolin Yaself</span>
@@ -25,6 +27,7 @@ const Singlecard = (props) => {
     </Card.Body>
     <div className={Styles.cardBottonShadow}></div>
   </Card>
+  </React.Fragment>
   )
 }
 

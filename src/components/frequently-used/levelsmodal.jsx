@@ -3,14 +3,9 @@ import { Button } from "react-bootstrap";
 import { Modal } from "react-bootstrap";
 import Styles from "../../styles/modal.module.scss";
 
-
-
 function LevelsModel(props) {
-  
-
   //   dynamic input state
-  const [inputList, setInputList] = useState([{ speed: ""}]);
-
+  const [inputList, setInputList] = useState([{ speed: "" }]);
 
   //   modal form add or remove functions
   // handle input change
@@ -31,12 +26,12 @@ function LevelsModel(props) {
 
   // handle click event of the Add button
   const handleAddClick = () => {
-    setInputList([...inputList, { speed: "", from: "",to:"" }]);
+    setInputList([...inputList, { speed: "", from: "", to: "" }]);
   };
 
   //   handle click event of the save button
   const handleSave = () => {
-     props.setlevelInput(inputList)
+    props.setlevelInput(inputList);
     setInputList([...inputList, { speed: "", from: "", to: "" }]);
     props.onHide();
   };
@@ -48,7 +43,6 @@ function LevelsModel(props) {
       aria-labelledby="contained-modal-title-vcenter"
       centered
       scrollable="true"
-     
     >
       <Modal.Header closeButton>
         <Modal.Title
@@ -69,7 +63,7 @@ function LevelsModel(props) {
         <form className={Styles.form}>
           {inputList.map((x, i) => {
             return (
-              <div>
+              <div key={i}>
                 <div className="d-inline">
                   {inputList.length !== 1 && (
                     <button
@@ -86,39 +80,31 @@ function LevelsModel(props) {
                   value={x.speed}
                   onChange={(e) => handleInputChange(e, i)}
                 />
-
-                 
                 &nbsp;
-                
                 <input
                   className="ml10"
                   name="from"
                   type="number"
-                   style={{width:'50px',padding:"5px"}}
+                  style={{ width: "50px", padding: "5px" }}
                   onChange={(e) => handleInputChange(e, i)}
-                /> 
-                 
-                   &nbsp;
-
-                  <input
+                />
+                &nbsp;
+                <input
                   className="ml10 text-uppercase"
                   name="from"
                   type="button"
-                   style={{width:'70px',padding:"5px"}}
-                    value="of"
-                    disabled
+                  style={{ width: "70px", padding: "5px" }}
+                  value="of"
+                  disabled
                 />
                 &nbsp;
-                  <input
+                <input
                   className="ml10"
                   name="to"
                   type="number"
-                   style={{width:'70px',padding:"10px"}}
+                  style={{ width: "70px", padding: "10px" }}
                   onChange={(e) => handleInputChange(e, i)}
-                /> 
-
-
-
+                />
                 <div className="d-flex justify-content-center">
                   {inputList.length - 1 === i && (
                     <button className={Styles.add_btn} onClick={handleAddClick}>
