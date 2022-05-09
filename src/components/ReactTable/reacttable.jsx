@@ -23,7 +23,8 @@ export const BasicTable = () => {
 
   return (
     <>
-      <table {...getTableProps()} >
+      
+        <table {...getTableProps()} >
         <thead>
           {headerGroups.map(headerGroup => (
             <tr {...headerGroup.getHeaderGroupProps()}>
@@ -66,6 +67,10 @@ export const BasicTable = () => {
           ))}
         </tfoot>
         </table>
+      
+        
+     
+   
 
         </>
 
