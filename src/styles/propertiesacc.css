@@ -1,0 +1,14 @@
+.properties-divs {
+    background-color: rgb(205, 233, 233);
+    text-align: center;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 150px !important;
+  
+   
+}
+
+
+

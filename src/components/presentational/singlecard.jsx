@@ -1,34 +1,96 @@
-import React from 'react'
-import { Card } from 'react-bootstrap'
-import Styles from "../../styles/nestedCard.module.scss"
+import React,{useState}  from "react";
+import { Card } from "react-bootstrap";
+import { useNavigate} from "react-router";
 
+import { BsThreeDotsVertical } from "react-icons/bs";
+import { FaEthereum } from "react-icons/fa";
+import { AiFillHeart } from "react-icons/ai";
+import Ethimg from "../../Assets/Images/ethereium.png";
+import Singlecardmodal from "../frequently-used/singlecardmodal";
+import "../../styles/nestedcard.css"
 
 const Singlecard = (props) => {
-  
+
+  const [show, setShow] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleModal = () => {
+    setShow(true);
+  };
+
   return (
-    <React.Fragment key={props.num}>
-    <Card className={Styles.nestedCard}  >
-    <Card.Img  className={Styles.nested_card_img}  id="nested-card-img" variant="top" src={props.imgsrc} />
-    <Card.Body  className={Styles.nested_card_body}>
-     
-      <Card.Text  as='div' className={Styles.cardbodyDiv}>
+    <React.Fragment key={props.id}>
+      <Card className="card">
+        <div
+          className="card_header"
+          onClick={() => navigate(`/listing/${props.id}`)}
+        >
+          <div className="detail">
+            <div className="author_image">
+              <img
+                src={props.imgsrc}
+                className="img-fluid"
+                alt="Cinque Terre"
+              />
+            </div>
+           
+            <div className="single_author_name">
+              <span>{props.owner}</span>
+            </div>
+          </div>
+          <div>
+            <BsThreeDotsVertical />
+          </div>
+        </div>
+        <div className="card_image">
+          <img className="img-fluid" src={props.imgsrc} alt="card_image" />
+        </div>
+        {/* card body  */}
+
+        <div>
+          {/* sale and title div */}
+          <div className="mt-4 p-2 d-flex flex-column align-items-end">
             <div>
-                 <span >ape drops:snoo</span> <br />
-                  <span className="name">foolin Yaself</span>
+              <span>{props.title}</span>
             </div>
-            <div className='d-flex flex-column align-items-end'> 
-                <span>price</span> 
-                <span>$0.09</span> 
-                <span className='leftdays'>7 days left</span>
-
+            <div>
+              <span className="text-secondary">{props.sale_time}</span>
             </div>
-      </Card.Text>
-          
-    </Card.Body>
-    <div className={Styles.cardBottonShadow}></div>
-  </Card>
-  </React.Fragment>
-  )
-}
+          </div>
+          {/* price and day left div  */}
+          <div className="d-flex justify-content-between px-2 align-items-end">
+            <div>
+              {" "}
+              <span>
+                price <br />
+                <FaEthereum /> {props.price} <br />
+                <span>#{props.token_id}</span>
+              </span>{" "}
+            </div>
+            <div>
+              <span> {props.days_left} Days left</span>
+            </div>
+          </div>
+          <div className="card_bottom_div">
+            <div className="account_eth">
+              <img src={Ethimg} alt="ethimg" />
+            </div>
+            <div className="badge">
+              <span className="badge badge-primary">
+                {" "}
+                <AiFillHeart /> {props.likes} k
+              </span>
+            </div>
+            <div className="placebid_btn">
+              <button  onClick={handleModal}>Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </Card>
+      <Singlecardmodal   id={props.id}  data={props.data} show={show} setShow={setShow} />
+    </React.Fragment>
+  );
+};
 
-export default Singlecard
+export default Singlecard;

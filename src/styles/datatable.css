@@ -1,0 +1,81 @@
+.table {
+    font-size: 16px;
+    text-align: center;
+    position: relative;
+    }
+    .react-bootstrap-table table {
+        table-layout: auto;
+        overflow-x: hidden;
+        }
+.sticky-header{
+      position: sticky;
+      top: 0;
+}
+
+.react-bootstrap-table>table>thead>tr>th .filter {
+    font-weight: 400;
+    display: none;
+}
+.table>:not(caption)>*>* {
+    background-color: var(--bs-table-bg);
+    border-bottom-width: 1px;
+    text-align: center;
+}
+.react-bootstrap-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch
+    }
+    .react-bootstrap-table table {
+    table-layout: auto !important
+    }
+    .table th,
+    .table td {
+    white-space: nowrap
+    }
+
+span.sr-only {display: none;}
+    @media (max-width:992px){
+        .react-bootstrap-table table {
+             table-layout: auto !important;
+        }
+
+        .table {
+            font-size: 14px;
+            text-align: center;
+           
+            } 
+    }
+    @media (max-width:776px){
+        .react-bootstrap-table table {
+             table-layout: auto !important;
+        }
+
+        .table {
+            font-size: 13px;
+            text-align: center;
+            }
+    }
+
+    
+
+    @media (max-width:576px){
+        .react-bootstrap-table table {
+             table-layout: auto !important;
+        }
+
+        .table {
+            font-size: 10px;
+            text-align: center;
+            }
+            input{
+                  height: 20px !important;
+                  width: 100%;
+            }
+            input::placeholder {
+                font-size: 8px;
+            }
+            
+            
+    }

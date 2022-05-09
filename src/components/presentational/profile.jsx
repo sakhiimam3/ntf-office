@@ -1,136 +1,154 @@
-import React, { useRef } from "react";
-import { GrFormAdd } from "react-icons/gr";
-import { AiFillWallet } from "react-icons/ai";
-import { Container, Row, Button, Col } from "react-bootstrap";
-import { BsChevronDown, BsChevronUp } from "react-icons/bs";
-
+import React, { useState, useRef, useEffect } from "react";
+import { useParams } from "react-router";
+import {  Col, Container, Row } from "react-bootstrap";
+import { MdCloudUpload } from "react-icons/md";
+import { AiOutlineCopy } from "react-icons/ai";
+import Profilebar from "./profilebar";
+import { BsStar } from "react-icons/bs";
+import {BiMessageCheck} from 'react-icons/bi'
 import Styles from "../../styles/profile.module.scss";
-const Profile = () => {
 
 
+const Profile = (props) => {
+  // profile image get from json 
+  const {data}=props
 
-  const readMoreBtn = useRef(null);
-  const ref = useRef(null);
-  const readLessBtn = useRef(null);
+  const {id} = useParams()
+    let render =data.filter((e)=> e.id === id)
+    console.log(render)
+  // image upload states
+  const [image, setImage] = useState();
+  const [preview, setPreview] = useState("");
+  const fileUploadRef = useRef();
 
 
+  // copy adress to clipboard  state
+  const [text, setText] = useState('3s3ww432w32ww3qwefqwedqweqweqwed');
+  // show to save clipboard 
+  const [showsave,setShowSave]=useState(false)
 
-  //   read more functionality 
-  const readMore = () => {
-    ref.current.style.display = "block";
-    readLessBtn.current.style.display = "inline";
-    readMoreBtn.current.style.display = "none";
+  useEffect(() => {
+    if (image) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPreview(reader.result);
+      };
+      reader.readAsDataURL(image);
+    } else {
+      render.map((e)=> setPreview(e.smallImage))
+     
+    }
+  }, [image]);
+
+  const getFileHandler = (e) => {
+    const file = e.target.files[0];
+    if (file && file.type.substr(0, 5)) {
+      setImage(file);
+    } else {
+      setImage(null);
+    }
   };
-  //   read more functionality  end 
 
-
-
-  //   read less functionality 
-  const readLess = () => {
-    ref.current.style.display = "none";
-    readMoreBtn.current.style.display = "inline";
-    readLessBtn.current.style.display = "none";
+  const uploadHandler = () => {
+    fileUploadRef.current.click();
   };
-  //   read less functionality  end 
 
+  // copyclipboard functionality 
+  
+  const copyHandler = event => {
+    setText(event.target.value);
+  }
+  const copy = async () => {
+    await navigator.clipboard.writeText(text);
+      setShowSave(true)
+      setTimeout(()=> setShowSave(false),2000)
+   
+  }
+
+
+    // const default iamge set on upload 
+  
 
 
   return (
     <>
-      <Container fluid>
-        <Row className="d-flex justify-content-end mt-4">
-          <Col
-            md={4}
-            className="d-flex justify-content-center  align-items-center "
-          >
-            <Button
-              variant="light"
-              className={`p-2 m-2 ${Styles.watchlistbtn} d-flex align-items-center justify-content-between`}
-              size="lg"
-            >
-              <GrFormAdd /> add to watchlist
-            </Button>
+      <section className={Styles.profile_section}>
+        
+                        {/* profile_banner  */}
+                          <div className={Styles.profile_banner}>
+                              {render.map((e,id)=>{
+                                  return <div key={e.id}>
+                                  <img  src={e.largeImage} alt="img" />
+                                  </div>
 
-            <Button className={Styles.indivisual_side_icon} variant="light">
-              <AiFillWallet />
-            </Button>
-            <Button className={Styles.indivisual_side_icon} variant="light">
-              <i className="fa fa-ellipsis-v" aria-hidden="true"></i>
-            </Button>
-          </Col>
-        </Row>
-      </Container>
+                              })}
+                               
+                          </div>
+             
+        <Container className={Styles.profile_container}>
+           
+          <Row>
+            <Col md={3}>
+              <div className={Styles.profile_content}>
+                <div className={Styles.image_upload} onClick={uploadHandler}>
+                  {preview ? (
+                    <img
+                      src={preview}
+                      alt="upload"
+                      onClick={() => setImage(null)}
+                    />
+                  ) : (
+                    <MdCloudUpload />
+                  )}
 
-      <Container fluid>
-        <Row className={Styles.profile_section}>
-          <Col md={6} className="text-center">
-            <h1>Cyber Snails Official</h1>
-            <span className={Styles.created_by_owner}>
-              created by <a href="#"> cybersnails-developer</a>
-            </span>
-            <br />
-            <Button>
-              <i className="fa fa-twitter" aria-hidden="true"></i> CyberSnailsNFT{" "}
-              <a href="#">Linked</a>
-            </Button>
-            <div className={Styles.small_card}>
-                <div className={Styles.card_text}>
-                   <h6>3.3k</h6>
-                  <span>item</span>
-             </div>
-                 <div className={Styles.card_text}>
-                     <h6>3.3k</h6>
-                      <span>item</span>
+                  <input
+                    type="file"
+                    ref={fileUploadRef}
+                    onChange={getFileHandler}
+                    accept="image/*"
+                  />
+                </div>
               </div>
-              <div className={Styles.card_text}>
-                <h6>3.3k</h6>
-                <span>item</span>
+            </Col>
+            {render.map((item,id)=>{
+                                  return<>
+                                     <Col md={9} className={`${Styles.profile_detail}`}>
+              <div className={Styles.profile_name}>
+                <span>{item.name}</span> <br />
+                <span>{item.email}</span>
               </div>
-              <div className={Styles.card_text}>
-                <h6>3.3k</h6>
-                <span>item</span>
+              <div className={Styles.recive_address}>
+                <input type="text" value={text} onChange={copyHandler} />
+                 
+                <div className={Styles.icon}>
+                  <AiOutlineCopy onClick={copy} />
+            {showsave ?  <span class="badge badge-dark text-secondary">copied</span> : null}   
+
+                </div>
               </div>
-            </div>
-          </Col>
-          <p className={Styles.readmore_text}>
-            The upload has succeeded, 3333 Cyber Snails made it through. Join
-            the discord to access <br /> the alpha section with your Cyber
-            Snail.
-          </p>
-          <p className={Styles.readmore_text}>
-            The upload has succeeded, 3333 Cyber Snails made it through. Join
-            the discord to access <br /> the alpha section with your Cyber
-            Snail.
-          </p>
-          <div className={Styles.readmore_text} id={Styles.more_text} ref={ref}>
-            <p>
-              The upload has succeeded, 3333 Cyber Snails made it through. Join
-              the discord to access <br /> the alpha section with your Cyber
-              Snail.
-            </p>
-          </div>
+              <div className={Styles.follow}>
+                <div className={Styles.icon}>
+                  <BsStar />
+                </div>
+                <span>follow</span>
+              </div>
 
-          <button
-            ref={readMoreBtn}
-            className={Styles.readmoreButton}
-            onClick={readMore}
-            size="lg"
-          >
-            <BsChevronDown />
-          </button>
+              <div className={Styles.message}>
+                <div className={Styles.icon}>
+                  <BiMessageCheck />
+                </div>
+                <span>message</span>
+              </div>
+            </Col>
+                                  </>
+                              })}
+                               
+         
+          </Row>
+        </Container>
+        <Profilebar />
+      </section>
 
-          <button
-            ref={readLessBtn}
-            id={Styles.readless}
-            onClick={readLess}
-            size="lg"
-
-
-          >
-            <BsChevronUp />
-          </button>
-        </Row>
-      </Container>
     </>
   );
 };

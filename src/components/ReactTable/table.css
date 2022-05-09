@@ -1,0 +1,109 @@
+table {
+  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+width: 100%;  
+margin-top: 20px;
+
+
+}
+
+table td,
+table th {
+  border: 1px solid #ddd;
+  padding: 12px;
+  padding-left: 8px;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+table th, tfoot td {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  background-color: #4caf50;
+  color: white;
+}
+.ReactTable .rt-thead {
+  overflow-y: scroll;
+}
+
+@media (max-width:992px){
+    table{
+         width: 300px;
+    }
+    th,td{
+        font-size: 13px;
+    }
+}
+@media (max-width:920px){
+  table{
+       width: 300px;
+  }
+  th,td{
+      font-size: 16px;
+  }
+}
+@media (max-width:780px){
+  table{
+       width: 200px;
+  }
+  th,td{
+      font-size: 13px;
+  }
+}
+
+@media (max-width:657px){
+  table td,
+  table th {
+    padding: 9px;
+    padding-left: 8px;
+  }
+  th,td{
+      font-size: 8px;
+  }
+}
+
+@media (max-width:576px){
+  table td,
+table th {
+  padding: 8px;
+  padding-left: 1px;
+}
+  th,td{
+      font-size:  9px;
+      padding: 0px;
+   
+  }
+}
+
+@media (max-width:496px){
+  table td,
+table th {
+  padding: 3px;
+  padding-left: 1px;
+}
+  th,td{
+      font-size:  8px;
+      padding: 0px;
+   
+  }
+}
+
+@media (max-width:440px){
+  table td,
+table th {
+  padding: 1px;
+  padding-left: 1px;
+}
+  th,td{
+      font-size:  8px;
+      padding: 0px;
+   
+  }
+}

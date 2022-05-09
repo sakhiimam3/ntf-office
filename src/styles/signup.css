@@ -1,0 +1,136 @@
+.sign_up-main {
+
+       padding: 0px;
+       display: flex;
+       justify-content: center;
+  
+      
+      
+
+
+
+
+}
+
+.signup_form {
+       margin-top: 100px;
+      background-color: rgb(248, 241, 231);
+       padding: 30px;
+       height: 650px;
+       box-shadow: 3px -5px 17px 2px rgba(201, 201, 201, 0.75);
+       -webkit-box-shadow: 3px -5px 17px 2px rgba(201, 201, 201, 0.75);
+       -moz-box-shadow: 3px -5px 17px 2px rgba(201, 201, 201, 0.75);
+       position: relative;
+
+
+}
+
+.signup_logo {
+          width: 100px;
+          height: 100px;
+          margin: auto;
+          border-radius: 50%;
+}
+
+.signup_logo img{
+       border-radius: 50%;
+}
+
+.signup_form h1 {
+       font-weight: 600;
+       padding: 20px 0px;
+       text-align: center;
+       
+}
+
+.signup_form .input_fields {
+       position: relative;
+}
+
+.signup_form .input_fields input {
+       width: 30rem;
+       border: none;
+       border-bottom: 1px solid grey;
+       background-color: transparent;
+       text-indent: 40px;
+
+
+
+
+
+}
+
+
+
+.signup_form .input_fields svg {
+       position: absolute;
+       left: 2%;
+       bottom: 10%;
+       font-size: 20px;
+
+}
+
+
+
+.signup_form .input_fields input:focus {
+       outline: none;
+       border-bottom: 1px solid rgb(29, 27, 27);
+}
+
+.input_fields label {
+       font-size: 18px;
+       font-weight: 600;
+       font-family: sans-serif;
+}
+
+.already_an_account span {
+       color: rgb(93, 93, 231);
+       font-size: 17px;
+       font-weight: 600;
+       cursor: pointer;
+}
+
+.social_media_icons {
+       display: flex;
+       justify-content: center;
+
+}
+
+.social_media_icons .facebook_icon {
+       display: flex;
+       justify-content: center;
+       color: rgb(7, 176, 255);
+       align-items: center;
+       width: 30px;
+       height: 30px;
+       border-radius: 50%;
+       font-size: 30px;
+       cursor: pointer;
+       transition: all .5s linear
+}
+
+.social_media_icons .twitter_icon {
+       display: flex;
+       background-color: #fff;
+       justify-content: center;
+       color: rgb(0, 102, 255);
+       align-items: center;
+       width: 30px;
+       height: 30px;
+       border-radius: 50%;
+       font-size: 30px;
+       cursor: pointer;
+       transition: all .5s linear
+}
+
+
+
+.already_an_account {
+       display: flex;
+       justify-content: center;
+       cursor: pointer;
+}
+
+.submit_btn button{
+ cursor: pointer;
+}

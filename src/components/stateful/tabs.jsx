@@ -1,39 +1,17 @@
 import React, { useState, useEffect } from 'react'
-import axios from "axios";
+// import axios from "axios";
 import { Col, Container, Row, Tab, Tabs } from 'react-bootstrap';
 import Styles from "../../styles/tabs.module.scss";
 import Loader from '../frequently-used/loader';
 import Cards from "../presentational/card";
-import img from "../../Assets/Images/nft4.gif";
 
 
 //  calling api for  card
-const CardTabs = () => {
-    const [placeholderData, setplaceholderData] = useState([])
+const CardTabs = (props) => {
+ const {data}=props
+ 
     const [isloading, setIsloading] = useState(false)
 
-    const getData = async () => {
-
-    try {
-            setIsloading(true)
-            const resp = await axios.get('https://jsonplaceholder.typicode.com/posts');
-            setplaceholderData(resp.data)
-
-
-    } catch (err) {
-            // Handle Error Here
-            console.error(err);
-    } finally {
-            setIsloading(false)
-    }
-
-
-    };
-
-    useEffect(() => {
-        getData()
-
-    }, [])
 
     const RenderCard = () => {
         return (
@@ -41,17 +19,16 @@ const CardTabs = () => {
 
                 <Container fluid>
                     <Row>
-                        {placeholderData.map((item, index) => {
+                        {data.map((item, index) => {
 
                             return (
                                 <>
                                     <Col md={4}>
                                         <Cards
-                                            imgsrc={img}
-                                            key={index}
+                                            imgsrc={item.smallImage}
                                             title={item.title}
-                                            body={item.body}
-                                            id={item.id}
+                                            id={index + 1}
+                                            num={index}
                                         />
 
 

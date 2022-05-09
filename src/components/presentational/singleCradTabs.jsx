@@ -3,7 +3,6 @@ import { Container, Row, Tab, Tabs,Col } from "react-bootstrap";
 import { FaTh } from "react-icons/fa";
 import { FiActivity } from "react-icons/fi";
 import Styles from "../../styles/nestedTabs.module.scss";
-import RenderInnerList from "../stateful/singleCardList";
 // import Sidebar from "./sidebar";
 
 const SingleCradTabs = () => {
@@ -31,7 +30,6 @@ const SingleCradTabs = () => {
                   <Sidebar />
                 </Col>  */}
                 <Col md={12}>
-                <RenderInnerList />
                 </Col>
 
               </Row>

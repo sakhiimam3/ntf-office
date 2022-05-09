@@ -3,7 +3,6 @@
 
 
 /* banner css */
-
 * {
   margin: 0;
   padding: 0px;
@@ -11,7 +10,10 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+   font-family: 'Lora', serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Roboto Slab', serif;
 }
 
 /* // tabs css start  */
@@ -67,3 +69,17 @@ ul.nav.nav-tabs {
       pointer-events: none;
       opacity: 0.20;
   }
+
+  
+  .accordion-item:first-of-type .accordion-button {
+  
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.table>:not(caption)>*>* {
+  padding: 1.3rem 0.5rem;
+  background-color: var(--bs-table-bg);
+  border-bottom-width: 1px;
+  text-align: center;
+}

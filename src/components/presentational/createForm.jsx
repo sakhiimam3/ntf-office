@@ -31,10 +31,7 @@ const CreateForm = (props) => {
   const [sensitive, setSensitive] = useState(null);
   const [collection, setCreatecollection] = useState(null);
 
-  // clear model render dic states 
-  const [clearproper,setClearproper]=useState()
-  const [clearlevel,setClearLevel]=useState()
-  const [clearsats,setClearsats]=useState()
+  
 
 
 
@@ -114,6 +111,11 @@ const CreateForm = (props) => {
     setinput({ name: "", external: "", description: "" });
     setSupply(1);
     setSelectedOption(null)
+    setPropInput([])
+    setleveInput([])
+    setstatsInput([])
+    
+    
    
     props.setImage(null)
     console.log(input, "name,external,description");

@@ -1,0 +1,279 @@
+ /* .card {
+//   background-color: #011e30 !important;
+//   color: #fff;
+//   border-radius: 10px;
+//   cursor: pointer;
+//   transition: 0.9s all linear;
+
+//   &:hover {
+//     background-color: #04253a;
+//     transform: translateY(-10px);
+//   }
+
+//   .card_header {
+//     height: 80px;
+//     width: 100%;
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     padding: 0 10px;
+
+//     .detail {
+//       display: flex;
+
+//       .author_image {
+//         width: 45px;
+//         height: 45px;
+//         border-radius: 50px;
+//         @include flexprop;
+
+//         img {
+//           border-radius: 50px;
+//         }
+//       }
+
+
+//       .single_author_name {
+//         @include flexprop;
+//         margin-left: 10px;
+
+//         span {
+//           font-weight: 600;
+//         }
+//       }
+//     }
+//   }
+
+//   .card_image {
+//     width: 220px;
+//     height: 220px;
+//     border-radius: 10px;
+//     margin: auto;
+
+//     img {
+//       border-radius: 10px;
+//     }
+//   }
+
+//   .view_history {
+//     color: grey;
+
+//     &:hover {
+//       color: white;
+//     }
+
+//     svg {
+//       font-size: 20px;
+//     }
+//   }
+
+//   .in_stock {
+//     span {
+//       color: grey;
+
+//       &:hover {
+//         color: white;
+//       }
+//     }
+//   }
+
+//   .card_bottom_div {
+//     border-top: 2px solid rgb(85, 83, 83);
+//     margin-top: 20px;
+//     margin-bottom: 20px;
+//     display: flex;
+//     justify-content: space-around;
+//     align-items: center;
+//     flex-wrap: wrap;
+//     padding-top: 20px;
+
+//     .account_eth {
+//       width: 30px;
+//       height: 30px;
+//       border-radius: 25px;
+//       display: flex;
+
+//       img {
+//         width: 100%;
+//         height: auto;
+//         border-radius: 25px;
+//       }
+
+//       span {
+//         font-size: 8px;
+//       }
+//     }
+
+     
+//     .placebid_btn {
+//       button {
+//         color: rgb(145, 72, 72);
+//         padding: 3px 10px;
+//         border-radius: 15px;
+//         border: none;
+//         text-transform: capitalize;
+//         background-color: #04e0e7;
+//         color: rgb(19, 18, 18);
+//         font-weight: 600;
+
+//         &:hover{
+//             background-color: rgb(6, 26, 15);
+//             color: #fff;
+//         }
+//       }
+//     }
+//   }
+  
+  
+//   .badge {
+//     background-color: #19272b;
+//     border-radius: 10px;
+ 
+//     padding: 0;
+//     span{
+//         font-weight: 400;
+//         font-size: 16px;
+//     }
+     
+
+//     svg {
+//       font-size: 18px;
+//       color: rgb(235, 17, 17);
+//     }
+//   }
+// } */
+
+
+
+
+
+
+.card {
+  background-color: #011e30 !important;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.9s all linear;
+}
+
+.card:hover {
+  background-color: #04253a;
+  transform: translateY(-10px);
+}
+
+.card .card_header {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.card .card_header .detail {
+  display: flex;
+}
+
+
+.author_image {
+  width: 45px;
+  height: 45px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.author_image img {
+  border-radius: 50px;
+}
+
+.single_author_name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+
+}
+
+.single_author_name span {
+  font-weight: 600;
+}
+
+.card_image {
+  width: 220px;
+  height: 220px;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.card_image  img {
+  border-radius: 10px;
+}
+
+
+.card_bottom_div {
+  border-top: 2px solid rgb(85, 83, 83);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 20px;
+}
+
+
+ .card_bottom_div .account_eth {
+  width: 30px;
+  height: 30px;
+  border-radius: 25px;
+  display: flex;
+
+}
+
+.account_eth  img {
+  width: 100%;
+  height: auto;
+  border-radius: 25px;
+}
+
+.account_eth span {
+  font-size: 8px;
+
+}
+
+ .placebid_btn button {
+  color: rgb(145, 72, 72);
+  padding: 3px 10px;
+  border-radius: 15px;
+  border: none;
+  text-transform: capitalize;
+  background-color: #04e0e7;
+  color: rgb(19, 18, 18);
+  font-weight: 600;
+
+ }
+ .placebid_btn .button:hover{
+  background-color: rgb(6, 26, 15);
+  color: #fff;
+}
+
+
+.badge {
+  background-color: #19272b;
+  border-radius: 10px;
+
+  padding: 0;
+}
+.badge span {
+      font-weight: 400;
+      font-size: 16px;
+  }
+   
+
+ .badge span svg {
+    font-size: 18px;
+    color: rgb(235, 17, 17);
+  }

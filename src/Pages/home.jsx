@@ -1,7 +1,6 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-
 import Styles from "../styles/home.module.scss";
  import img from "../Assets/Images/star.png";
 const Home = () => {
@@ -11,6 +10,7 @@ const Home = () => {
   const handleCreate=()=>[
           Navigate("/createMetamask")
   ]
+
 
   return (
     <>
@@ -28,13 +28,13 @@ const Home = () => {
                     </p>
                   </div>
                   <div className="btns mt-5">
-                    <button onClick={()=>Navigate("/explore")} type="button" class="btn btn-primary btn-lg">
+                    <button onClick={()=>Navigate("/explore")} type="button" className="btn btn-light btn-lg">
                       Explore
                     </button>
                     &nbsp;
                     <button
                       type="button"
-                      class="btn btn-outline-primary btn-lg"
+                      className="btn btn-outline-light btn-lg"
                       onClick={handleCreate}
                     >
                       Create
@@ -49,8 +49,14 @@ const Home = () => {
               </div>
             </Col>
           </Row>
+                  
+                
+         
         </Container>
-
+               
+                
+         <div>
+         </div>
     
       </section>
     </>
