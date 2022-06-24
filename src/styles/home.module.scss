@@ -1,17 +1,17 @@
 .main_container {
-    margin-top: 70px;
-    min-height: 100vh;
+     min-height: 100vh;
     background: linear-gradient(black,black,rgba(0,0,0,0.5),balc);
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url("../Assets/Images/backCreate.jpg");
     color: white;
+    
     opacity: 95%;
+    margin: 0;
+    padding: 0;
   
-    .container {
-      margin-top: 50px;
-  
-    }
+
+
   
     .heading {
       h1 {

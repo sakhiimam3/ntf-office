@@ -4,8 +4,33 @@
     box-shadow: inset 0 -1px 0 #fff !important;
 }
 
+.accordian_header-text_and_icon svg{
+    font-size: 25px;
+}
 .accordion-button .collapsed{
     background-color: #fff !important;
     box-shadow: inset 0 -1px 0 #fff !important;
 }
 
+.accordion-header {
+    margin-bottom: 0;
+    height: 74px;
+    display: flex;
+    border: 0.5px solid white;
+  }
+
+  .accordion-item {
+    border: 1px solid #c9c5c5 !important;
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Arrow-down.svg/2560px-Arrow-down.svg.png") !important;
+    transform: rotate(-180deg);
+}
+
+.collapsing {
+    -webkit-transition-delay: 0.1s !important;
+    transition-delay: 0.1s !important;
+    transition: height 0.1s ease !important;
+  }
+  

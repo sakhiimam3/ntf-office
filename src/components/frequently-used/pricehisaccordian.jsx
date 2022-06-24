@@ -37,16 +37,16 @@ const Pricehisaccordian = () => {
   return (
     <>
       <Accordion className="mt-4 accordian">
-        <Accordion.Item>
-          <Accordion.Header>
+        <Accordion.Item eventKey="0">
+          <Accordion.Header className="accordian_header-text_and_icon">
             {" "}
             <IoMdTrendingUp /> &nbsp; Price History
           </Accordion.Header>
           <Accordion.Body className="accordian_body">
-            {
+            
               <section>
-                <div className="select-input">
-                  <select onChange={handleselect}>
+               
+                  <select className="select_input" onChange={handleselect}>
                     <option value="7">last 7 days</option>
                     <option value="14">last 14 days </option>
                     <option value="30">last 30 days</option>
@@ -54,10 +54,10 @@ const Pricehisaccordian = () => {
                     <option value="90">last 90 days</option>
                     <option value="all time">all time</option>
                   </select>
-                </div>
+                
 
                 <div className="mt-5">
-                  <ResponsiveContainer width="100%" aspect={3}>
+                  <ResponsiveContainer width="100%" aspect={4}>
                     <LineChart data={pdata}>
                       <CartesianGrid />
                       <XAxis dataKey="axis" interval={"preserveStartEnd"} />
@@ -72,9 +72,9 @@ const Pricehisaccordian = () => {
                     </LineChart>
                   </ResponsiveContainer>
                 </div>
-                {/* <img   className='not-found-img' src={notfound} alt="notfound image" /> */}
+             
               </section>
-            }
+            
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>

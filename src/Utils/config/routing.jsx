@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from "react";
 import { Route, Routes } from "react-router-dom";
-import Explore from "../../Pages/explore";
+import Explore from "../../Pages/explore";  
 import Stats from "../../Pages/stats";
 import Resourses from "../../Pages/Resourses";
 import Create from "../../Pages/create";
@@ -13,6 +13,7 @@ import Signup from "../../Pages/signup";
 import Listing from "../../components/presentational/Listing";
 import Data from "../../components/frequently-used/data.json"
 import Login from "../../Pages/Login"
+import CreateMultipleNft from "../../Pages/createMultipleNft";
 
 
 const Routing = () => {
@@ -44,6 +45,7 @@ const Routing = () => {
             <Route path="/resourses" element={<Resourses />} />
             <Route path="/create" element={<Create />} />
             <Route path="/:id"   element={<Collection data={renderdata}  nestedData={nestedData}/>} />
+
             <Route path="/listing/:id"   
              element={<Listing    
             nestedData={nestedData} 
@@ -54,8 +56,10 @@ const Routing = () => {
             activityData={activityaccordian}
 
             />} />
+            <Route path="/create/:id"   element={<CreateMultipleNft  data={nestedData} />} />
+
             <Route path="/createMetamask" element={<CreateMetamask />} />
-            <Route path="/signup" element={<Signup />} />
+            <Route path="/signup" element={<Signup />} /> 
             <Route path="/login" element={<Login/>} />
 
 

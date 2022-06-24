@@ -5,12 +5,12 @@ import {TiPuzzle}  from "react-icons/ti"
 import {HiOutlineCollection}  from "react-icons/hi"
 
 
-import Styles from "../../styles/profile.module.scss"
+
 const Collectionhead = () => {
   return (
    <>
          
-          <Navbar   className={Styles.collection_header}>
+          <Navbar   className="collection_header" >
     <Container>
     <Nav className="d-flex align-items-center flex-wrap">
       <Nav.Link href="#home" className='text-light  text-capitalize'>  <IoIosFlash /> on sale</Nav.Link>
@@ -21,7 +21,7 @@ const Collectionhead = () => {
     </Nav>
       <div>
               <form>
-                    <select className='bg-dark text-light'> 
+                    <select className='bg-dark text-light' style={{height:"40px",padding:"4px"}}> 
                          <option value="1"> Everthing</option>
                          <option value="1">Recent</option>
                          <option value="1">Relevanr</option>

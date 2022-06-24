@@ -5,10 +5,10 @@ import "../../styles/propertiesacc.css"
 const Propertiesaccordian = (props) => {
     const {data} =props
   return (
-    <section className='mt-5'>
+    <section >
    <Accordion>
-    <Accordion.Item >
-    <Accordion.Header as="h2" className='fw-bold'> <MdSell /> &nbsp; Properties</Accordion.Header>
+    <Accordion.Item eventKey="0" >
+    <Accordion.Header className='accordian_header-text_and_icon' > <MdSell /> &nbsp; Properties</Accordion.Header>
      <Accordion.Body className='bg-light'>
      <Container fluid>
      <Row className=' gap-1'>

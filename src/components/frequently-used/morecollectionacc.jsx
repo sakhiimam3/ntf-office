@@ -5,34 +5,36 @@ import MoreCard from "../presentational/moreCard";
 
 const Morecollectionaccordian = (props) => {
   const { data } = props;
+ 
   return (
     <section className="mt-5">
       <Accordion>
         <Accordion.Item>
-          <Accordion.Header as="h2" className="fw-bold">
+          <Accordion.Header  className="accordian_header-text_and_icon">
             {" "}
             <MdViewColumn /> &nbsp; More from this collection
           </Accordion.Header>
           <Accordion.Body className="bg-light">
             <Container>
               <Row>
-                {data.map((item, i) => {
+              
+                {data.slice(1).map((item, i) => {
+
                   return (
-                    <>
+                    <React.Fragment key={i}>
                       <MoreCard
                         img={item.img2}
                         title={item.title}
                         owner={item.owner}
                         sale_time={item.sale_time}
-                        item_key={i + 1}
                       />
-                    </>
+                    </React.Fragment>
                   );
                 })}
               </Row>
             </Container>
 
-            <MoreCard />
+            
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>

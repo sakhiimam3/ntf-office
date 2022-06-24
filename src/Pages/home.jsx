@@ -15,11 +15,11 @@ const Home = () => {
   return (
     <>
       <section className={Styles.main_container}>
-        <Container className="d-flex align-items-center">
+        <Container className="d-flex align-items-center mt-5">
           <Row className="mt-5 pt-5">
             <Col md={6}>
               <div className="">
-                <div className="text-box mb-4">
+                <div className="text-box">
                   <div className={Styles.heading}>
                     <h1>Discover, collect, and sell extraordinary NFTs</h1>
                     <p>

@@ -3,17 +3,20 @@ import Select from "react-select";
 import Styles from "../../styles/createcollection.module.scss";
 
 const CreateCollection = (props) => {
+  
 
-
-  //  selectOption state
-  const [selectedOption, setSelectedOption] = useState(null);
-
+  //  const title=props.title.map((item)=> item.title)
+  
   //  select input options
   const options = [
-    { value: "species", label: "species" },
-    { value: "cartoon", label: "cartoon" },
-    { value: "animals", label: "animals" },
+    { value: "Abc", label:"abc" },
+  
   ];
+  //  selectOption state
+  const [selectedOption, setSelectedOption] = useState(options);
+
+
+  
 
   // send data to create form 
  props.getCreateCollection(selectedOption)

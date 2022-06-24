@@ -9,12 +9,12 @@ const OffersAccordian = (props) => {
   return (
     
           <>
-<section className='mt-5'>
+<section className='mt-3'>
 <Accordion>
-  <Accordion.Item>
-    <Accordion.Header > <MdMenu /> &nbsp; Offers</Accordion.Header>
+  <Accordion.Item eventKey="0">
+    <Accordion.Header className='accordian_header-text_and_icon'> <MdMenu /> &nbsp; Offers</Accordion.Header>
     <Accordion.Body className='bg-light'>
-    <Table   bordered responsive  hover  style={{fontSize:"14px"}} >
+    <Table   borderless responsive  hover  style={{fontSize:"14px"}} >
   <thead>
     <tr>
     

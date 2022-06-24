@@ -90,10 +90,10 @@ const TableList = () => {
        <div  style={{width:"1200px",margin:'auto'}}>
           <BootstrapTable 
       
-      bootstrap4 
+           bootstrap4 
       keyField='id'   
-      columns={columns} 
-       data={datalist} 
+        columns={columns} 
+         data={datalist} 
        pagination={paigination}
        filter={filterFactory()}
        headerClasses='sticky-header'

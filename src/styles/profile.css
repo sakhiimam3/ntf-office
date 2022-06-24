@@ -1,0 +1,287 @@
+@import "./mixins.scss";
+
+.profile_section {
+  margin-top: 70px;
+  background-color: black;
+}
+.profile_section .profile_banner img {
+  margin-bottom: 5rem;
+  border-radius: 1rem;
+  height: 200px;
+  width: 100%;
+}
+.profile_section .profile_container {
+  height: 400px;
+  background-image: url("../Assets/Images/cover.jpg");
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  position: relative;
+  background-color: black !important;
+}
+.profile_section .profile_container .profile_content .image_upload {
+  height: 300px;
+  width: 250px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: -3%;
+  background: #464040;
+  border: 1px solid grey;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s all linear;
+}
+.profile_section .profile_container .profile_content .image_upload:hover {
+  background-color: #011e30;
+  border: 1px dashed white;
+}
+.profile_section .profile_container .profile_content .image_upload svg {
+  font-size: 50px;
+  color: #b4b4b4;
+}
+.profile_section .profile_container .profile_content .image_upload img {
+  width: 100% !important;
+  height: 300px !important;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.profile_section .profile_container .profile_content .image_upload input {
+  display: none;
+}
+.profile_section .profile_detail {
+  margin-top: 18rem;
+  display: flex;
+  width: 60%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.profile_section .profile_detail .profile_name {
+  color: white;
+}
+.profile_section .profile_detail .profile_name span {
+  font-weight: 600;
+  font-size: 18px;
+  font-family: sans-serif;
+}
+.profile_section .profile_detail .recive_address {
+  display: flex;
+  flex-wrap: wrap;
+}
+.profile_section .profile_detail .recive_address input {
+  outline: none;
+  border: none;
+  color: aliceblue;
+  background-color: grey;
+  height: 24px;
+  border-radius: 8px;
+}
+.profile_section .profile_detail .recive_address .icon {
+  background-color: #22c5c5;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  margin-left: -12px;
+  padding: 5px;
+  cursor: pointer;
+}
+.profile_section .profile_detail .recive_address .icon svg {
+  font-size: 20px;
+  color: #fff;
+}
+.profile_section .profile_detail .follow {
+  display: flex;
+}
+.profile_section .profile_detail .follow span {
+  color: #fff;
+  font-size: 16px;
+  margin-left: 10px;
+  display: flex;
+}
+.profile_section .profile_detail .follow span:hover {
+  color: #55a;
+  cursor: pointer;
+}
+.profile_section .profile_detail .follow .icon {
+  background-color: #22c5c5;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  margin-left: -10px;
+}
+.profile_section .profile_detail .follow .icon svg {
+  font-size: 20px;
+  color: #fff;
+}
+.profile_section .profile_detail .message {
+  display: flex;
+}
+.profile_section .profile_detail .message span {
+  color: #fff;
+  font-size: 16px;
+  margin-left: 10px;
+  display: flex;
+}
+.profile_section .profile_detail .message span:hover {
+  color: #55a;
+  cursor: pointer;
+}
+.profile_section .profile_detail .message .icon {
+  background-color: #22c5c5;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  margin-left: -10px;
+}
+.profile_section .profile_detail .message .icon svg {
+  font-size: 20px;
+  color: #fff;
+}
+
+
+ /* profile bottom bar scss  start */
+
+.profile_bottom_bar {
+  background-color: #011e30;
+  height: 70px;
+  border-radius: 10px;
+  color: wheat !important;
+  position: relative;
+  z-index: 1;
+}
+.profile_bottom_bar div {
+  background-color: #011e30;
+}
+.profile_bottom_bar .bottom_links {
+  background-color: #011e30 !important;
+}
+.profile_bottom_bar .bottom_links a {
+  color: white !important;
+  font-size: 16px;
+}
+.profile_bottom_bar .bottom_links a:hover {
+  color: #829aa6 !important;
+}
+
+ /* profile bottom bar scss  end */
+
+ /* collection list header scss start */
+
+.collection_header {
+  background-color: #011e30;
+  color: #fff;
+  margin-top: 5rem;
+  height: 80px;
+}
+.collection_header svg {
+  font-size: 16px;
+}
+
+ /* collection list header scss end
+ collection list card scss start */
+
+
+ /* side menu scss */
+ .side_menu {
+  position: sticky;
+  top: 0;
+}
+.side_menu .side_menu_card {
+  width: 300px;
+  height: 250px;
+  margin-top: 80px;
+  background-color: #011e30;
+  color: white;
+  text-align: center;
+}
+.side_menu .side_menu_card .heading {
+  margin-top: 10px;
+  font-family: sans-serif;
+  font-size: 20px;
+  border-bottom: 2px solid #1c323f;
+}
+.side_menu .side_menu_card .heading h6 {
+  font-size: 20px;
+  color: #829aa6;
+}
+
+
+.featured_card {
+  width: 300px;
+  height: auto;
+  margin-top: 40px;
+  background-color: #1c323f !important;
+}
+.featured_card h4 {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 500;
+  color: #fff;
+  border-bottom: 1px solid #4b4444;
+}
+.featured_card .features_img {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  transition: 0.5s all linear;
+  cursor: pointer;
+}
+.featured_card .features_img:hover {
+  transform: translateY(3px);
+}
+
+
+@media  (max-width:576px){
+  .navbar-expand .navbar-nav {
+   flex-direction: column !important; 
+   margin-top: 20px;
+}
+   .image_upload{
+    height: 200px !important;
+    width: 200px !important;
+    border-radius: 50% !important;
+    position: absolute;
+    bottom: -3%;
+    background: #464040;
+    border: 1px solid grey;
+    top: 30%;
+   left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    
+   }
+   .profile_section .profile_detail {
+    margin-top: 19rem;
+    display: flex;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 80%;
+    position: relative;
+    justify-content: center;
+  
+    
+  
+}
+.add_item_btn{
+       width: 100%;
+       margin-top: 10px;
+}
+}
+
+

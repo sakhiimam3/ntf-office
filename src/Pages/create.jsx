@@ -1,47 +1,11 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { MdCloudUpload } from "react-icons/md";
 import CreateForm from "../components/presentational/createForm";
 import Styles from "../styles/create.module.scss";
-const Create = () => {
-  const [image, setImage] = useState();
-  const [preview, setPreview] = useState("");
+const Create = (props) => {
+  const {title}=props
 
-  const fileUploadRef = useRef();
-
-  useEffect(() => {
-    if (image) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setPreview(reader.result);
-      };
-      reader.readAsDataURL(image);
-    } else {
-      setPreview(null);
-    }
-  }, [image]);
-
-  const getFileHandler = (e) => {
-    const file = e.target.files[0];
-    if (file && file.type.substr(0, 5)) {
-      setImage(file);
-    } else {
-      setImage(null);
-    }
-  };
-
-  const vedioUploder = (e) => {
-    const file = e.target.files[0];
-    if (file && file.type.substr(0, 5)) {
-      setImage(file);
-    } else {
-      setImage(null);
-    }
-  };
-
-  const uploadHandler = () => {
-    fileUploadRef.current.click();
-  };
+  
   return (
     <>
       <section className={Styles.create_section}>
@@ -72,33 +36,12 @@ const Create = () => {
                     MB
                   </span>
                 </div>
-                {/* uploade img div */}
-                <div className={Styles.Upload_img}>
-                  <div className={Styles.overlay} onClick={uploadHandler}>
-                    {/* <img /> */}
-
-                    {preview ? (
-                      <img
-                        src={preview}
-                        alt="upload"
-                        onClick={() => setImage(null)}
-                      />
-                    ) : (
-                      <MdCloudUpload />
-                    )}
-
-                    <input
-                      type="file"
-                      ref={fileUploadRef}
-                      onChange={getFileHandler}
-                      accept="image/*"
-                    />
-                  </div>
-                </div>
+          
+               
               </div>
 
               {/* form section component */}
-              <CreateForm setImage={setImage} />
+              <CreateForm  />
               {/* form section   component */}
             </Col>
           </Row>

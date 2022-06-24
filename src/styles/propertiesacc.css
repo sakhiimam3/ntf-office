@@ -1,3 +1,24 @@
+
+.accordian_header-text_and_icon svg{
+        font-size: 25px;
+}
+
+.select_input {
+  width: 50%;
+  height: 50px;
+  border: 1px solid #e3dede;
+  border-radius: 10px;
+}
+
+.select_input:focus{
+    outline: none;
+}
+.accordion-header {
+    margin-bottom: 0;
+    height: 74px;
+    display: flex;
+    border: 1px solid white;
+  }
 .properties-divs {
     background-color: rgb(205, 233, 233);
     text-align: center;

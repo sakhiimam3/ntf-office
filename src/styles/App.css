@@ -14,6 +14,8 @@ body {
 font-family: 'Poppins', sans-serif;
 font-family: 'Raleway', sans-serif;
 font-family: 'Roboto Slab', serif;
+
+
 }
 
 /* // tabs css start  */
@@ -82,4 +84,7 @@ ul.nav.nav-tabs {
   background-color: var(--bs-table-bg);
   border-bottom-width: 1px;
   text-align: center;
+  color: black;
 }
+
+

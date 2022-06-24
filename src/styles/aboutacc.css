@@ -1,3 +1,20 @@
+.accordion-header {
+  margin-bottom: 0;
+  height: 74px;
+  display: flex;
+  border: 0.5px solid white;
+}
+.accordion-item {
+  border: 1px solid #f8f4f4 !important;
+  box-shadow: 0.1px 0.1px 0.1px grey;
+
+}
+
+
+
+.accordian_header-text_and_icon svg{
+  font-size: 25px;
+}
 .about-div .img-box img{
     float:left;
     width:20%;
@@ -17,7 +34,7 @@
     border: 1px solid rgb(229, 230, 229);
     color: rgb(124, 117, 117); 
     padding: 10px 24px; 
-    cursor: pointer; 
+    cursor: pointer;  
     float: left; 
     margin-top: 20px;
     font-size: 18px;

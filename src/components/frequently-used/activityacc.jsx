@@ -25,8 +25,8 @@ const ActivityAccordian = (props) => {
   return (
     <section className='mt-2 '>
     <Accordion>
-      <Accordion.Item>
-        <Accordion.Header as="h2" className='fw-bold'> <RiArrowUpDownLine /> &nbsp; Item Activity</Accordion.Header>
+      <Accordion.Item  eventKey="0">
+        <Accordion.Header  className='accordian_header-text_and_icon '> <RiArrowUpDownLine /> &nbsp; Item Activity</Accordion.Header>
         <Accordion.Body className='bg-light p-0'>
         
             {/* <Datatable2 /> */}

@@ -1,148 +1,4 @@
- /* .card {
-//   background-color: #011e30 !important;
-//   color: #fff;
-//   border-radius: 10px;
-//   cursor: pointer;
-//   transition: 0.9s all linear;
-
-//   &:hover {
-//     background-color: #04253a;
-//     transform: translateY(-10px);
-//   }
-
-//   .card_header {
-//     height: 80px;
-//     width: 100%;
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-//     padding: 0 10px;
-
-//     .detail {
-//       display: flex;
-
-//       .author_image {
-//         width: 45px;
-//         height: 45px;
-//         border-radius: 50px;
-//         @include flexprop;
-
-//         img {
-//           border-radius: 50px;
-//         }
-//       }
-
-
-//       .single_author_name {
-//         @include flexprop;
-//         margin-left: 10px;
-
-//         span {
-//           font-weight: 600;
-//         }
-//       }
-//     }
-//   }
-
-//   .card_image {
-//     width: 220px;
-//     height: 220px;
-//     border-radius: 10px;
-//     margin: auto;
-
-//     img {
-//       border-radius: 10px;
-//     }
-//   }
-
-//   .view_history {
-//     color: grey;
-
-//     &:hover {
-//       color: white;
-//     }
-
-//     svg {
-//       font-size: 20px;
-//     }
-//   }
-
-//   .in_stock {
-//     span {
-//       color: grey;
-
-//       &:hover {
-//         color: white;
-//       }
-//     }
-//   }
-
-//   .card_bottom_div {
-//     border-top: 2px solid rgb(85, 83, 83);
-//     margin-top: 20px;
-//     margin-bottom: 20px;
-//     display: flex;
-//     justify-content: space-around;
-//     align-items: center;
-//     flex-wrap: wrap;
-//     padding-top: 20px;
-
-//     .account_eth {
-//       width: 30px;
-//       height: 30px;
-//       border-radius: 25px;
-//       display: flex;
-
-//       img {
-//         width: 100%;
-//         height: auto;
-//         border-radius: 25px;
-//       }
-
-//       span {
-//         font-size: 8px;
-//       }
-//     }
-
-     
-//     .placebid_btn {
-//       button {
-//         color: rgb(145, 72, 72);
-//         padding: 3px 10px;
-//         border-radius: 15px;
-//         border: none;
-//         text-transform: capitalize;
-//         background-color: #04e0e7;
-//         color: rgb(19, 18, 18);
-//         font-weight: 600;
-
-//         &:hover{
-//             background-color: rgb(6, 26, 15);
-//             color: #fff;
-//         }
-//       }
-//     }
-//   }
-  
-  
-//   .badge {
-//     background-color: #19272b;
-//     border-radius: 10px;
- 
-//     padding: 0;
-//     span{
-//         font-weight: 400;
-//         font-size: 16px;
-//     }
-     
-
-//     svg {
-//       font-size: 18px;
-//       color: rgb(235, 17, 17);
-//     }
-//   }
-// } */
-
+/* 
 
 
 
@@ -168,6 +24,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 10px;
+  font-size: 12px;
 }
 
 .card .card_header .detail {
@@ -194,12 +51,12 @@
   justify-content: center;
   align-items: center;
   margin-left: 10px;
+  font-size: 16px;
 
 }
 
-.single_author_name span {
-  font-weight: 600;
-}
+
+
 
 .card_image {
   width: 220px;
@@ -212,6 +69,11 @@
   border-radius: 10px;
 }
 
+.single_author_name span {
+  font-weight: 600;
+  font-size: 12px;
+  color: lightgrey;
+}
 
 .card_bottom_div {
   border-top: 2px solid rgb(85, 83, 83);
@@ -222,6 +84,12 @@
   align-items: center;
   flex-wrap: wrap;
   padding-top: 20px;
+}
+
+
+span{
+  font-size: 0.8rem;
+  letter-spacing: 1px;
 }
 
 
@@ -244,28 +112,37 @@
 
 }
 
- .placebid_btn button {
+.placebid_btn button {
   color: rgb(145, 72, 72);
-  padding: 3px 10px;
+  padding: 3px 12px;
   border-radius: 15px;
   border: none;
   text-transform: capitalize;
-  background-color: #04e0e7;
-  color: rgb(19, 18, 18);
   font-weight: 600;
-
- }
+  font-size: 14px;
+  background: transparent;
+  color: #04e0e7;
+  transition: all .5s linear;
+}
  .placebid_btn .button:hover{
-  background-color: rgb(6, 26, 15);
-  color: #fff;
+         color: #fff;
+         border-bottom: 2px solid grey;
+         background-color: black;
 }
 
 
 .badge {
-  background-color: #19272b;
-  border-radius: 10px;
-
-  padding: 0;
+  display: inline-block;
+  padding: 0.35em 0.65em;
+  font-size: 0.15em;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  background: transparent;
 }
 .badge span {
       font-weight: 400;
@@ -277,3 +154,177 @@
     font-size: 18px;
     color: rgb(235, 17, 17);
   }
+ */
+
+
+
+
+  /* 2nd card css  */
+  :root {
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --main-bg: hsl(217, 54%, 11%);
+    --card-bg: hsl(216, 50%, 16%);
+    --dark-blue: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+  }
+  
+.cards{
+  padding: 16px;
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.9s all linear;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.cards:hover {
+  background-color: #04253a;
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+.card--image {
+  width: 100%;
+  border-radius: 15px;
+  background-color: transparent;
+ 
+}
+
+.card--image-ctn {
+  position: relative;
+}
+
+.card--image-ctn svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+}
+
+.card--image-ctn:hover svg {
+  visibility: visible;
+}
+
+.card--image:hover {
+  filter: grayscale(100%) sepia(80%) hue-rotate(248deg) brightness(80%)
+    contrast(107%);
+}
+
+h1 {
+ padding: 0;
+ margin: 2px 0; 
+}
+
+.title_card {
+  color: var(--white);
+  font-size: 14px;
+  text-decoration: none;
+  margin-top: 30px;
+}
+
+.subtitle {
+  color: var(--soft-blue);
+  font-weight: 300;
+  font-size: 13px;
+}
+
+.metadata {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 14px;
+}
+
+.metadata--price {
+  color: var(--cyan);
+  font-weight: 400;
+  display: flex;
+    align-items: center;
+}
+
+.metadata--price svg,
+.metadata--days svg {
+  margin-right: 12px;
+}
+
+.metadata--days {
+  display: flex;
+  align-items: center;
+  color: var(--soft-blue);
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid var(--dark-blue);
+  margin: 10px 0;
+  padding: 0;
+}
+
+.creator {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.creator .buyNow{
+    color: aliceblue;
+    font-size: 12px;
+    transition: all .3s  ease-out;
+}
+
+.buyNow:hover{
+
+    background-color: rgb(24, 39, 39);
+    color: #fff;
+    padding: 8px 10px;
+    border-radius: 5px;
+
+}
+
+.buyNow
+
+.creator >span:hover{
+    color: white;
+}
+
+.creator--avatar {
+  height: 30px;
+  margin-right: 16px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+}
+
+.creator--details {
+  font-size: 14px;
+  color: var(--soft-blue);
+  font-weight: 300;
+}
+
+.creator--details a {
+  color: var(--white);
+}
+
+.attribution {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--cyan);
+}

@@ -11,12 +11,12 @@ const SingleCardList = (props) => {
     return (
       <>
         <Container>
-          <Row>
+          <Row className="d-flex justify-content-center">
             {nestedData.map((item,index) => {
             
               return (
                 <>
-                  <Col className="mt-5" md={4}>
+                  <Col className="mt-5"    sm={4} >
                     <NestedCard
                        data={nestedData}
                       imgsrc={item.img}

@@ -7,7 +7,7 @@ const banner = () => {
            <Container  fluid  >
                <Row>
                     <Col>
-                       <h2>explore collection</h2>
+                       <h2  >explore collection</h2>
                     </Col>
               </Row> 
 

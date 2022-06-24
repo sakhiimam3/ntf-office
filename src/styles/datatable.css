@@ -11,10 +11,13 @@
       position: sticky;
       top: 0;
 }
-
+.table th{
+    color: black !important;
+}
 .react-bootstrap-table>table>thead>tr>th .filter {
     font-weight: 400;
     display: none;
+   
 }
 .table>:not(caption)>*>* {
     background-color: var(--bs-table-bg);

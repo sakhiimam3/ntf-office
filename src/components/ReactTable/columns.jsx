@@ -5,6 +5,7 @@ export const COLUMNS = [
     Header: 'Id',
     Footer: 'Id',
     accessor: 'id',
+    disableSortBy: true
  
   },
   {

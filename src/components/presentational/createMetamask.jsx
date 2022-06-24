@@ -52,15 +52,15 @@ const CreateMetamask = () => {
         <Container>
           <Row md={8}>
             {error ?
-              <div class="alert alert-danger d-flex justify-content-center " role="alert">
+              <div className="alert alert-danger d-flex justify-content-center " role="alert">
                 <h6 >Insall metamask extension !</h6>
               </div>
               : null}
           </Row>
           <Row className="mt-5 d-flex justify-content-center ">
             <Col md={7}>
-              <ul class="list-group">
-                <li class="list-group-item">
+              <ul className="list-group">
+                <li className="list-group-item">
 
 
 
@@ -71,7 +71,7 @@ const CreateMetamask = () => {
                     </button>
                   </div>
                   <div>
-                    <span class="badge bg-primary">popular</span>
+                    <span className="badge bg-primary">popular</span>
                   </div>
 
 

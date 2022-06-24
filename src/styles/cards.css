@@ -1,0 +1,52 @@
+h2, h5 {
+  margin: 0;
+  font-family: 'Roboto Slab', serif;
+}
+
+
+.card {
+
+  background-color: #efe9e9;
+  width: 24em;
+  border-radius: 2.5rem !important;
+  margin: 1em;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.03);
+  transition: all ease 200ms;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 13px 40px -5px rgba(50, 50, 93, 0.12), 0 8px 32px -8px rgba(0, 0, 0, 0.14), 0 -6px 32px -6px rgba(0, 0, 0, 0.02);
+}
+
+.card img {
+  width: 100%;
+  object-fit: cover;
+  height: 200px;
+}
+
+.card h2 {
+  color: #222;
+  margin-top: -0.2em;
+  line-height: 1.4;
+  font-size: 1.3em;
+  font-weight: 500;
+  font-family: 'Roboto Slab', serif;
+  transition: all ease-in 100ms;
+}
+
+.card .card_body {
+  padding: 1.2em;
+}
+
+
+@media (max-width:576px) {
+  .cards {
+
+    margin-top: 25px !important;
+  }
+
+
+}

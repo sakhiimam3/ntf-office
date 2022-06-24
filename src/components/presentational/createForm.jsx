@@ -3,8 +3,8 @@ import Select from "react-select";
 
 import metmakImg from "../../Assets/Images/metamaskLogo.png";
 import polyImage from "../../Assets/Images/polygon.png";
-
 import Styles from "../../styles/createform.module.scss";
+import ImageUploader from "../frequently-used/imageUploader";
 import CreateCollection from "./createCollection";
 import SelectList from "./selectList";
 
@@ -131,6 +131,9 @@ const CreateForm = (props) => {
   return (
     <>
       <form className={Styles.form}>
+
+        {/* uploade image  */}
+            <ImageUploader />
         <div className="mt-5">
           <label className="mb-3">
             name <span className="text-danger">*</span>
@@ -184,10 +187,10 @@ const CreateForm = (props) => {
       </form>
 
       {/* create collection list  */}
-      <CreateCollection getCreateCollection={getCreateCollection} />
+      <CreateCollection  title={props.title} getCreateCollection={getCreateCollection} />
 
       {/* select list like properties stats levels etc  */}
-      <SelectList childInputValues={childInputValues} />
+      <SelectList  childInputValues={childInputValues} />
 
       {/* supply   items*/}
       <div className="supply">

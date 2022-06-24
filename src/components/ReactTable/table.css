@@ -5,6 +5,9 @@ margin-top: 20px;
 font-family: sans-serif;
 
 
+
+
+
 }
 
 table td,
@@ -12,6 +15,7 @@ table th {
   border: 1px solid #ddd;
   padding: 12px;
   padding-left: 8px;
+  
 }
 
 table tr:nth-child(even) {
@@ -21,7 +25,9 @@ table tr:nth-child(even) {
 table tr:hover {
   background-color: #ddd;
 }
-
+ tr{
+  padding-top: 30px;
+}
 table th, tfoot td {
   padding-top: 15px;
   padding-bottom: 15px;

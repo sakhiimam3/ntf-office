@@ -10,8 +10,8 @@ const AboutAccordian = (props) => {
      const {data}=props
   return (
     <Accordion >  
-    <Accordion.Item >
-    <Accordion.Header as="h2" className='accordian_header'> <MdVerticalSplit /> &nbsp; About </Accordion.Header>
+    <Accordion.Item  eventKey="0" >
+    <Accordion.Header  className='accordian_header accordian_header-text_and_icon '> <MdVerticalSplit /> &nbsp; About </Accordion.Header>
      <Accordion.Body className='bg-light'>
      <Container fluid>
      <Row>

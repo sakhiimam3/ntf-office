@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import DataTable from "react-data-table-component";
 
 const Datatable2 = () => {
@@ -69,6 +68,7 @@ const Datatable2 = () => {
     name: "Country",
     selector: row => row.country,
     sortable: true,
+    
     },
 ];
 
@@ -84,7 +84,7 @@ const Datatable2 = () => {
 
   return (
     <>
-    <div className="container">
+   
       <DataTable
         title="Data Table"
         data={Data}
@@ -93,7 +93,7 @@ const Datatable2 = () => {
 
         
       />
-      </div>
+ 
     </>
   );
 };

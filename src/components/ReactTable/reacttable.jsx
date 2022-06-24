@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react'
-import { useTable,useSortBy } from 'react-table'
+import { useTable,useSortBy ,useFilters} from 'react-table'
 import MOCK_DATA from './MOCK_DATA.json'
 import { COLUMNS } from './columns'
 import './table.css'
-
+import { Filter } from './columnFilter'
 export const BasicTable = () => {
   const columns = useMemo(() => COLUMNS, [])
   const data = useMemo(() => MOCK_DATA, [])
@@ -19,7 +19,15 @@ export const BasicTable = () => {
     columns,
     data
    
-  },useSortBy)
+  },
+  useFilters,
+  useSortBy
+  )
+
+  const generateSortingIndicator = column => {
+    return column.isSorted ? (column.isSortedDesc ? " 🔽" : " 🔼") : ""
+  }
+
 
   return (
     <>
@@ -32,13 +40,9 @@ export const BasicTable = () => {
                 <th {...column.getHeaderProps(column.getSortByToggleProps())}>{column.render('Header')}
                 
                 <span>
-                    {column.isSorted
-                      ? column.isSortedDesc
-                        ? ' 🔽'
-                        : ' 🔼'
-                      : ''}
+                {generateSortingIndicator(column)}
                   </span>
-                
+                  {/* <Filter column={column} /> */}
                 </th>
               
               ))}

@@ -6,12 +6,12 @@ const ListingAccordian = (props) => {
   return (
     
           <>
-<section className='mt-5'>
+<section className='mt-3'>
 <Accordion  >
-  <Accordion.Item >
-    <Accordion.Header as="h2" className='fw-bold'> <MdSell /> &nbsp; Listing</Accordion.Header>
+  <Accordion.Item  eventKey="0">
+    <Accordion.Header  className='accordian_header-text_and_icon'> <MdSell /> &nbsp; Listing</Accordion.Header>
     <Accordion.Body className='bg-light'>
-    <Table striped bordered hover  style={{fontSize:"14px"}}>
+    <Table  borderless responsive   style={{fontSize:"14px"}}>
   <thead>
     <tr>
     
